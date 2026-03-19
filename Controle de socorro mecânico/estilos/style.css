@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background: green;
+    display: flex;              /* ativa o flexbox */
+    align-items: center;        /* centraliza verticalmente */
+    padding: 10px 20px;         /* um respiro nas bordas */
+}
+
+.logo {
+    justify-content: space-between;
+    padding-right: 80%;
+}
+
+.fa-user {
+    padding-right: 45px;
+    font-size: 22px;
+    color: white;
+}
+
+.fa-bell {
+    padding-right: 45px;
+    font-size: 22px;
+    color: white;
+}
+
+.fa-right-to-bracket {
+    font-size: 22px;
+    color: white;
+}
+
+.adicao {
+    background: green;
+}
