@@ -5,15 +5,17 @@
 }
 
 header {
-    background: green;
+    background: #111712;
     display: flex;              /* ativa o flexbox */
     align-items: center;        /* centraliza verticalmente */
-    padding: 10px 20px;         /* um respiro nas bordas */
+    padding: 15px 20px;         /* um respiro nas bordas */
 }
 
-.logo {
+.logo img{
     justify-content: space-between;
-    padding-right: 80%;
+    padding-right: 0%;
+    height: 50px;
+    border-right: 650px solid transparent;
 }
 
 .fa-user {
@@ -35,4 +37,11 @@ header {
 
 .adicao {
     background: green;
+}
+
+#pesquisa {
+    margin-right: 33%;
+    padding: 10px 50px;
+    border: none;
+    border-radius: 8px;
 }
