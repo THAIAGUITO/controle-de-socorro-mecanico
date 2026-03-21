@@ -1,17 +1,33 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-header {
-    background: #111712;
-    display: flex;              /* ativa o flexbox */
-    align-items: center;        /* centraliza verticalmente */
-    padding: 15px 20px;         /* um respiro nas bordas */
+.pagina {
+    display: flex;
+    height: calc(100vh - 58px);
 }
 
-.logo img{
+main {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+}
+
+header {
+    background: #111712;
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: solid 1px rgba(255, 255, 255, 0.06);
+}
+
+body {
+    background: #0b0f0d;
+}
+
+.logo img {
     justify-content: space-between;
     padding-right: 0%;
     height: 50px;
@@ -45,3 +61,63 @@ header {
     border: none;
     border-radius: 8px;
 }
+
+.sidebar {
+    background: #111712;
+    width: 250px;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    border-right: solid 1px rgba(255, 255, 255, 0.06);
+}
+
+.sidebar p {
+    color: #5a7460;
+    font-size: 12px;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+}
+
+.sidebar hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #7a9880;
+    text-decoration: none;
+    margin-bottom: 5px;
+    font-size: 14px;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.sidebar a:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.chamados_hoje {
+    background: #111712;
+    width: 300px;
+    height: 150px;
+    top: 20px;
+    left: 270px;
+    padding: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+.card_topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card_topo a
