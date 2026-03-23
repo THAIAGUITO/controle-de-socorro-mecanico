@@ -4,15 +4,13 @@
     box-sizing: border-box;
 }
 
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
 .pagina {
     display: flex;
     height: calc(100vh - 58px);
-}
-
-main {
-    flex: 1;
-    padding: 24px;
-    overflow-y: auto;
 }
 
 header {
@@ -99,8 +97,19 @@ body {
 }
 
 .sidebar a:hover {
-    color: white;
-    background: rgba(255, 255, 255, 0.03);
+    color: rgba(255, 255, 255, 0.822);
+    border-color: rgba(255, 255, 255, 0.15);
+    background: #161e18;
+    cursor: pointer;
+}
+
+main {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
 }
 
 .chamados_hoje {
@@ -112,6 +121,7 @@ body {
     padding: 20px;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
+    width: 100%;
 }
 
 .card_topo {
@@ -120,4 +130,74 @@ body {
     justify-content: space-between;
 }
 
-.card_topo a
+.card_topo p {
+    color: #5a7460;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.fa-phone-volume {
+    font-size: 15px;
+    color: #19ACD1;
+}
+
+.fa-truck-medical {
+    font-size: 15px;
+    color: #FFF915;
+}
+
+.fa-circle-check {
+    font-size: 15px;
+    color: #4caf50;
+}
+
+.fa-clock {
+    font-size: 15px;
+    color: #FF0000;
+}
+
+.chamados_hoje:hover {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: #161e18;
+    cursor: pointer;
+}
+
+.card_inferior{
+    display: flex;
+    margin-top: 32px;
+    flex-direction: column;
+}
+
+.card_inferior p{
+    color: #5a7460;
+    font-size: 35px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.822);
+}
+
+.card_numero {
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.card_numero h1{
+    color: #5a7460;
+    font-size: 35px;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.822);
+}
+
+.card_numero p{
+    color: #5a7460;
+    font-size: 14px;
+    font-weight: 500;
+    margin-left: 0px;
+    padding-bottom: 15px;
+}
+
+.card_sub p {
+    color: #5a7460;
+    font-size: 12px;
+    font-weight: 500;
+}
