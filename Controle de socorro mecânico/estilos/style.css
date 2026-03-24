@@ -17,7 +17,7 @@ header {
     background: #111712;
     display: flex;
     align-items: center;
-    padding: 15px 20px;
+    padding: 8px 20px;
     border-bottom: solid 1px rgba(255, 255, 255, 0.06);
 }
 
@@ -32,41 +32,74 @@ body {
     border-right: 650px solid transparent;
 }
 
-.fa-user {
-    padding-right: 45px;
-    font-size: 22px;
-    color: white;
+.search_box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    padding: 10px 14px;
+    width: 300px;
+    margin-right: 33%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.fa-bell {
-    padding-right: 45px;
-    font-size: 22px;
-    color: white;
-}
-
-.fa-right-to-bracket {
-    font-size: 22px;
-    color: white;
-}
-
-.adicao {
-    background: green;
+.search_box .fa-magnifying-glass {
+    color: #5a7460;
+    font-size: 13px;
 }
 
 #pesquisa {
-    margin-right: 33%;
-    padding: 10px 50px;
     border: none;
+    background: transparent;
+    outline: none;
+    color: white;
+    width: 100%;
+}
+
+#pesquisa::placeholder {
+    color: #5a7460;
+    font-size: 13px;
+}
+
+.icones_cabecalho {
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.usuario, .notificacao, .sair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+    transition: all 0.2s ease;   /* ← aqui, não no :hover */
+}
+
+.usuario:hover, .notificacao:hover, .sair:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.fa-user, .fa-bell, .fa-right-to-bracket {
+    font-size: 15px;
+    color: #7a9880;
+    padding: 0;    /* ← remove o padding-right que estava antes */
+}
+
+.sidebar ul {
+    list-style: none;
+    margin-top: 10px;
 }
 
 .sidebar {
     background: #111712;
-    width: 250px;
+    width: 230px;
     height: 100vh;
-    position: relative;
-    top: 0;
-    left: 0;
     padding: 20px;
     border-right: solid 1px rgba(255, 255, 255, 0.06);
 }
@@ -101,6 +134,7 @@ body {
     border-color: rgba(255, 255, 255, 0.15);
     background: #161e18;
     cursor: pointer;
+    transition: all 0.5s ease;
 }
 
 main {
@@ -160,15 +194,16 @@ main {
     border-color: rgba(255, 255, 255, 0.15);
     background: #161e18;
     cursor: pointer;
+    transition: all 0.4s ease;
 }
 
-.card_inferior{
+.card_inferior {
     display: flex;
     margin-top: 32px;
     flex-direction: column;
 }
 
-.card_inferior p{
+.card_inferior p {
     color: #5a7460;
     font-size: 35px;
     font-weight: 500;
@@ -181,14 +216,14 @@ main {
     gap: 4px;
 }
 
-.card_numero h1{
+.card_numero h1 {
     color: #5a7460;
     font-size: 35px;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.822);
 }
 
-.card_numero p{
+.card_numero p {
     color: #5a7460;
     font-size: 14px;
     font-weight: 500;
