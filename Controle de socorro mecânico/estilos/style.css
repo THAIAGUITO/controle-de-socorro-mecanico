@@ -78,7 +78,7 @@ body {
     width: 36px;
     height: 36px;
     cursor: pointer;
-    transition: all 0.2s ease;   /* ← aqui, não no :hover */
+    transition: all 0.2s ease;   
 }
 
 .usuario:hover, .notificacao:hover, .sair:hover {
@@ -88,7 +88,7 @@ body {
 .fa-user, .fa-bell, .fa-right-to-bracket {
     font-size: 15px;
     color: #7a9880;
-    padding: 0;    /* ← remove o padding-right que estava antes */
+    padding: 0;    
 }
 
 .sidebar ul {
@@ -143,11 +143,16 @@ main {
     overflow-y: auto;
     display: flex;
     gap: 16px;
-    align-items: flex-start;
+    flex-direction: column;
+}
+
+.linha_cards {
+    display: flex;
+    gap: 16px;
 }
 
 .chamados_hoje {
-    background: #111712;
+    background: #18241a;
     width: 300px;
     height: 150px;
     top: 20px;
@@ -156,6 +161,7 @@ main {
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     width: 100%;
+    height: 140px;
 }
 
 .card_topo {
@@ -192,14 +198,14 @@ main {
 
 .chamados_hoje:hover {
     border-color: rgba(255, 255, 255, 0.15);
-    background: #161e18;
+    background: #283f2c;
     cursor: pointer;
     transition: all 0.4s ease;
 }
 
 .card_inferior {
     display: flex;
-    margin-top: 32px;
+    margin-top: 20px;
     flex-direction: column;
 }
 
@@ -235,4 +241,26 @@ main {
     color: #5a7460;
     font-size: 12px;
     font-weight: 500;
+}
+
+.linha_inferior {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+.area_mapa {
+    flex: 1;
+    background: #18241a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+.chamados_ativos {
+    width: 300px;
+    min-width: 300px;
+    background: #18241a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
 }
