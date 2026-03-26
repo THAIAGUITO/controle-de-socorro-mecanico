@@ -264,3 +264,130 @@ main {
     border-radius: 15px;
     padding: 20px;
 }
+
+.primeiro_chamado {
+    border-left: 3px solid #ff4242;
+    padding-left: 12px;
+    margin-bottom: 14px;
+}
+
+.chamados_ativos h1{
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.chamados_ativos p{
+    color: #5a7460;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.chamados_ativos hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+}
+
+.linha_topo_chamado {
+    display: flex;
+    align-items: center;
+}
+
+.urgente p {
+    color: #ff4242;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.linha_topo_chamado h1{
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    padding-left: 6px;
+    white-space: nowrap;
+}
+
+.linha_topo_chamado h2{
+    color: #5a7460;
+    font-size: 12px;
+    font-weight: 500;
+    margin-left: auto;
+    white-space: nowrap;
+}
+
+.parte_baixo_chamados {
+    display: flex;
+    flex-direction: column;
+}
+
+.parte_baixo_chamados .endereco {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.parte_baixo_chamados p{
+    color: #80af8b;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 4px;
+}
+
+.parte_baixo_chamados h2{
+    color: #5a7460;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 3px;
+}
+
+.fa-location-dot {
+    font-size: 12px;
+    color: #5a7460;
+    padding-top: 3px;
+}
+
+.chamado_normal {
+    border-left: 3px solid #1640ff;
+    padding-left: 12px;
+    margin-bottom: 14px;
+}
+
+.normal p {
+    color: #7a93ff;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.chamado_aguardando {
+    border-left: 3px solid #fbff00;
+    padding-left: 12px;
+    margin-bottom: 14px;
+}
+
+.aguardando p {
+    color: #fbff00;
+    font-size: 10px;
+    font-weight: 500;
+}
+
+.urgente, .normal, .aguardando {
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 6px; 
+    height: auto;
+}
+
+.urgente {
+    background-color: rgba(255, 76, 76, 0.2);
+}
+
+.normal {
+    background-color: rgba(104, 144, 255, 0.2);
+}
+
+.aguardando {
+    background-color: rgba(251, 255, 0, 0.2);
+}
