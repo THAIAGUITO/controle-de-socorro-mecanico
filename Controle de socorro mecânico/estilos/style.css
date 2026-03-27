@@ -256,13 +256,23 @@ main {
     border-radius: 15px;
 }
 
+.painel_direito {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+    align-items: flex-start;
+}
+
 .chamados_ativos {
-    width: 300px;
-    min-width: 300px;
     background: #18241a;
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 15px;
     padding: 20px;
+    overflow-y: auto;
+    min-height: 450px;
+    max-height: 450px;
+    min-width: 300px;
 }
 
 .primeiro_chamado {
@@ -390,4 +400,63 @@ main {
 
 .aguardando {
     background-color: rgba(251, 255, 0, 0.2);
+}
+
+.estatus_equipe {
+    background: #18241a;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    overflow-y: auto;
+    min-height: 200px;
+    max-height: 200px;
+    min-width: 300px;
+    max-width: 300px;
+}
+
+.topo_card_equipe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    margin: 20px;
+}
+
+.topo_card_equipe h1{
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.caixa_estilo_ativo {
+    background: rgba(74, 222, 123, 0.12);;
+    border-radius: 10px;
+    padding: 0% 10px;
+}
+
+.caixa_estilo_ativo p{
+    color: #4ade7b;
+    font-size: 12px;
+}
+
+.inferior_card_equipe {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card_funcinario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.funcionario{
+    background: #111712;
+    width: 90%;
+    height: 50px;
+    border-radius: 8px;
 }
