@@ -1,0 +1,11 @@
+.lado_esquerdo {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 70%;
+}
+
+.lado_direito {
+    background-color: #0b0f0d;
+    width: 30%;
+}

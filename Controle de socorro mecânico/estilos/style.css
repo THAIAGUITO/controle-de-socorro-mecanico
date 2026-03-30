@@ -72,8 +72,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: none;
+    border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 8px;
     width: 36px;
     height: 36px;
@@ -89,6 +89,15 @@ body {
     font-size: 15px;
     color: #7a9880;
     padding: 0;    
+    transition: all 0.2s ease;
+}
+
+.usuario:hover .fa-user,
+.notificacao:hover .fa-bell,
+.sair:hover .fa-right-to-bracket {
+    color: white;
+    transform: scale(1.2);
+    transition: all 0.2s ease;
 }
 
 .sidebar ul {
