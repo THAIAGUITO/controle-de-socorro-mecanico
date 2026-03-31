@@ -1,20 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOGIN - SOCORRO MECÂNICO</title>
 
-    <link rel="stylesheet" href="estilos/login.css">
+    <link rel="stylesheet" href="../estilos/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+
 </head>
+
 <body>
     <div class="lado_esquerdo">
-
+        <p>teste</p>
     </div>
 
     <div class="lado_direito">
+        <div class="topo_lado_direito">
+            <div class="texto_principal_topo">Bem-vindo de volta</div>
+            <div class="subtitulo_topo">Entre na sua conta para continuar</div>
+        </div>
 
-    </div>
+        <div class="caixa_senha_incorreta">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <div class="texto_senha_incorreta">
+                <p>E-mail ou senha incorretos. Tente novamente.</p>
+            </div>
+        </div>
+
+        <div class="caixa_de_email">
+            <label>E-mail</label>
+            <div class="caixa_de_colocar_email">
+                <i class="fa-solid fa-envelope"></i><input type="email" id="email_user" name="E-mail"
+                    placeholder="seu@email.com">
+            </div>
+        </div>
+
+        <div class="caixa_de_senha">
+            <label>Senha</label>
+            <div class="caixa_de_colocar_senha">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="password_user" name="E-mail" placeholder="●●●●●●●">
+                <button class="mostrar_senha"><i class="fa-solid fa-eye"></i></button>
+            </div>
+
+        </div>
+
+
+        <div class="linha_esqueci_senha">
+            <label class="lembrar">
+                <input type="checkbox" class="checkbox_lembrar">
+                <p>Lembrar de mim</p>
+            </label>
+            <a href="">Esqueci a Senha</a>
+        </div>
+
+        <button class="botao_login">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i>
+            <p>Entrar no sistema</p>
+        </button>
+
+        <div class="divisor">
+            <hr>
+            <p>ou continue com</p>
+            <hr>
+        </div>
+
+        <button class="caixa_sso_corporativo">
+            <i class="fa-solid fa-building"></i>
+            <p>Entrar com SSO corporativo</p>
+        </button>
+
+        <div class="linha_final">
+            Não tem acesso? 
+            <a href="">Solicitar ao administrador</a>
+        </div>
 
 </body>
+
 </html>
