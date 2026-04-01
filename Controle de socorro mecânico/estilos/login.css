@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
 body {
+    display: flex;
     background: #0b0f0d;
     font-family: 'DM Sans', sans-serif;
     min-height: 100vh;
-    width: 100%;
 }
 
 .lado_esquerdo {
@@ -21,8 +23,269 @@ body {
     width: 480px;
     min-width: 480px;
     display: flex;
-    align-items: center;
     justify-content: center;
     padding: 48px;
     background: #0b0f0d;
+    flex-direction: column;
+}
+
+.topo_lado_direito {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.texto_principal_topo {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #e2ebe4;
+    margin-bottom: 2px;
+}
+
+.subtitulo_topo{
+    font-size: 14px;
+    color: #7a9880;
+    margin-bottom: 36px;
+}
+
+.caixa_senha_incorreta {
+    display: flex;
+    align-items: center;
+    background: rgba(242, 92, 84, .08);
+    border-radius: 8px;
+    border: 1px solid rgba(242, 92, 84, .2);
+    padding: 10px 14px;
+    gap: 8px;
+    margin: 0px 0px 25px 0px;
+}
+
+.texto_senha_incorreta p {
+    color: #f25c54;
+    font-size: 13px;
+    margin: 0;
+}
+
+.fa-circle-exclamation {
+    color: #f25c54;
+    font-size: 13px;
+}
+
+.caixa_de_email {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+label {
+    color: #7a9880;
+    margin-bottom: 8px;
+    font-size: 15px;
+}
+
+.caixa_de_colocar_email {
+    display: flex;
+    background: #161e18;
+    padding: 11px 14px;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    white-space: nowrap;
+}
+
+.caixa_de_colocar_email:focus-within {
+    border-color: #1a8a36;
+    box-shadow: 0 0 0 3px rgba(26, 138, 54, 0.12);
+}
+
+#email_user {
+    display: flex;
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    color: white;
+    align-items: center;
+}
+
+#email_user::placeholder {
+    color: #5a7460;
+}
+
+.fa-envelope {
+    color: #5a7460;
+}
+
+.caixa_de_senha {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.caixa_de_colocar_senha {
+    display: flex;
+    background: #161e18;
+    padding: 11px 14px;
+    gap: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    white-space: nowrap;
+}
+
+.caixa_de_colocar_senha:focus-within {
+    border-color: #1a8a36;
+    box-shadow: 0 0 0 3px rgba(26, 138, 54, 0.12);
+}
+
+#password_user {
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    color: white;
+    font-size: 12px;
+}
+
+#password_user::placeholder {
+    color: #5a7460;
+    font-size: 9px;
+}
+
+.fa-lock {
+    color: #5a7460;
+}
+
+.mostrar_senha{
+    cursor: pointer;
+    color: #5a7460;
+    background: none;
+    border: none;
+}
+
+.linha_esqueci_senha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.lembrar {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.lembrar p {
+    margin: 0;
+    font-size: 13px;
+}
+
+.checkbox_lembrar {
+    width: 15px;
+    height: 15px;
+    accent-color: #1a8a36;
+    margin: 0;
+    cursor: pointer;
+}
+
+.linha_esqueci_senha a {
+    color: #4ade7b;
+    text-decoration: none;
+    font-size: 13px;
+    transition: .15s;
+}
+
+.linha_esqueci_senha a:hover {
+    color: #1a8a36;
+}
+
+.botao_login {
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    background: #1a8a36;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    gap: 8px;
+    padding: 13px;
+    font-family: 'Syne', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
+    transition: .3s;
+    letter-spacing: .3px;
+}
+
+.botao_login:hover {
+    background: #26a641;
+    transition: .3s;
+}
+
+.botao_login p {
+    margin: 0;
+}
+
+.divisor {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 0;
+}
+
+.divisor hr {
+    flex: 1;
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.divisor p {
+    font-family: 12px;
+    color: #5a7460;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.caixa_sso_corporativo {
+    width: 100%;
+    background: #161e18;
+    color: #7a9880;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 8px;
+    padding: 12px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    transition: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.caixa_sso_corporativo p {
+    margin: 0;
+}
+
+.caixa_sso_corporativo:hover{
+    background: #111712;
+    color: white;
+    transition: .3s;
+}
+
+.linha_final {
+    text-align: center;
+    margin-top: 28px;
+    font-size: 12px;
+    color: #5a7460;
+}
+
+.linha_final a{
+    text-decoration: none;
+    color: #4ade7b;
 }
