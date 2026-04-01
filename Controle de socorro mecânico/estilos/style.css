@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -156,94 +158,66 @@ main {
 }
 
 .linha_cards {
-    display: flex;
-    gap: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 13px;
 }
 
 .chamados_hoje {
-    background: #18241a;
-    width: 300px;
-    height: 150px;
-    top: 20px;
-    left: 270px;
-    padding: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 15px;
-    width: 100%;
-    height: 140px;
+    background: #161e18;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 18px 20px;
+    cursor: default;
+    transition: .2s;
 }
 
 .card_topo {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
 
 .card_topo p {
-    color: #5a7460;
-    font-size: 14px;
-    font-weight: 500;
+    color: #7a9880;
+    font-size: 12px;
 }
 
-.fa-phone-volume {
-    font-size: 15px;
-    color: #19ACD1;
-}
-
-.fa-truck-medical {
-    font-size: 15px;
-    color: #FFF915;
-}
-
-.fa-circle-check {
-    font-size: 15px;
-    color: #4caf50;
-}
-
-.fa-clock {
-    font-size: 15px;
-    color: #FF0000;
+.fundo_icon{
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
 }
 
 .chamados_hoje:hover {
-    border-color: rgba(255, 255, 255, 0.15);
-    background: #283f2c;
+    border-color: rgba(255, 255, 255, 0.10);
+    background: #1c2720;
     cursor: pointer;
-    transition: all 0.4s ease;
 }
 
-.card_inferior {
-    display: flex;
-    margin-top: 20px;
-    flex-direction: column;
+.card_central {
+    font-family: 'Syne', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1;
+    color: #e2ebe4;
 }
 
-.card_inferior p {
+.card_inferior{
+    font-size: 11.5px;
     color: #5a7460;
-    font-size: 35px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.822);
+    margin-top: 6px;
 }
 
-.card_numero {
-    display: flex;
-    align-items: flex-end;
-    gap: 4px;
-}
-
-.card_numero h1 {
+.card_central small{
+    font-size: 16px;
     color: #5a7460;
-    font-size: 35px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.822);
-}
-
-.card_numero p {
-    color: #5a7460;
-    font-size: 14px;
-    font-weight: 500;
-    margin-left: 0px;
-    padding-bottom: 15px;
+    font-weight: 400;
 }
 
 .card_sub p {
@@ -265,6 +239,61 @@ main {
     border-radius: 15px;
 }
 
+.topo_area_mapa {
+    background: #161e18;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.texto_topo_mapa {
+    width: 40%;
+}
+
+.texto_topo_mapa h1{
+    color: white;
+    font-size: 14px;
+}
+
+.texto_topo_mapa p{
+    color: #5a7460;
+    font-size: 12px;
+}
+
+.novo_chamado{
+    background: #1a8a36;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: .15s;
+}
+
+.novo_chamado label{
+    cursor: pointer;
+}
+
+.novo_chamado:hover{
+    background: #26a641;
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+#mapa {
+    width: 100%;
+    height: calc(100% - 60px);
+    border-radius: 0 0 15px 15px;
+}
+
 .painel_direito {
     display: flex;
     flex-direction: column;
@@ -281,19 +310,77 @@ main {
     min-height: 450px;
     max-height: 450px;
     min-width: 300px;
+    overflow: hidden;
 }
 
 .chamados_ativo_topo {
-    width: 100%;
-    height: 15%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 14px 18px;
 }
 
-.informações_chamados {
-    width: 40%;
-    margin-left: 20px;
+.titulo_chamado_topo{
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #e2ebe4;
+}
+
+.subtitulo_chamado_topo{
+    font-size: 12px;
+    color: #5a7460;
+    margin-top: 2px;
+    font-family: 'DM Sans', sans-serif;
+}
+
+.disponibilidade_sistema{
+    background: rgba(245, 200, 66, 0.12);
+    color: #f5c842;
+    display: inline-flex;
+    padding: 3px 8px;
+    border-radius: 20px;
+    align-items: center;
+    gap: 5px;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+.bolinha_de_disponibilidade{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+    animation: pulse 1.8s ease-in-out infinite;
+}
+
+.chamados {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    transition: .15s;
+}
+
+.chamados:hover{
+    background: #1c2720;
+    cursor: pointer;
+    transform: scale(1.05);
 }
 
 .chamados_ativos h1{
@@ -306,16 +393,6 @@ main {
     color: #5a7460;
     font-size: 12px;
     font-weight: 500;
-}
-
-.chamados {
-    display: flex;
-    flex-direction: row;
-    gap: 12px;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 15px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .linha {
@@ -487,34 +564,5 @@ main {
     padding-left: 10px;
 }
 
-.topo_area_mapa {
-    background: #161e18;
-    width: 100%;
-    height: 10%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    border-radius: 15px;
-}
 
-.texto_topo_mapa {
-    width: 40%;
-}
-
-.texto_topo_mapa h1{
-    color: white;
-    font-size: 14px;
-}
-
-.texto_topo_mapa p{
-    color: #5a7460;
-    font-size: 12px;
-}
-
-#mapa {
-    width: 100%;
-    height: calc(100% - 60px);
-    border-radius: 0 0 15px 15px;
-}
 
