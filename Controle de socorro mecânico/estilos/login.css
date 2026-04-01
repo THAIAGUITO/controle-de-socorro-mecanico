@@ -14,9 +14,28 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 48px;
     position: relative;
     overflow: hidden;
+    padding: 40px;
+}
+
+#logo {
+    height: 10%;
+    width: 40%;
+}
+
+#logo img {
+    height: 100%;
+}
+
+.lado_esquerdo::before{
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(74, 222, 123, .04) 1px, transparent 1px), 
+    linear-gradient(90deg, rgba(74, 222, 123, .04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
 }
 
 .lado_direito {
