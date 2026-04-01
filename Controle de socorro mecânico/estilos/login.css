@@ -1,11 +1,28 @@
+body {
+    background: #0b0f0d;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    width: 100%;
+}
+
 .lado_esquerdo {
+    flex: 1;
+    background: #111712;
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
     display: flex;
     flex-direction: column;
-    gap: 16px;
-    width: 70%;
+    justify-content: space-between;
+    padding: 48px;
+    position: relative;
+    overflow: hidden;
 }
 
 .lado_direito {
-    background-color: #0b0f0d;
-    width: 30%;
+    width: 480px;
+    min-width: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px;
+    background: #0b0f0d;
 }
