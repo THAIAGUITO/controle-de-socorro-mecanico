@@ -13,7 +13,7 @@
 <body>
     <div class="lado_esquerdo">
         <div id="logo">
-            <a href="../index.html"><img src="../imagens/logo.svg" alt="Logo"></a>
+            <a href="../index.php"><img src="../imagens/logo.svg" alt="Logo"></a>
         </div>
 
         <div class="conteudo_central_esquerdo">

@@ -342,6 +342,10 @@ main {
     transition: .15s;
 }
 
+.novo_chamadp_link {
+    text-decoration: none;
+}
+
 .novo_chamado label{
     cursor: pointer;
 }

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <title>CONTROLE DE SOCORRO</title>
+</head>
+
+<body>
+
+    <!-- Aqui começa a div do cabeçalho -->
+
+    <?php include 'componentes/cabecalho.php'; ?>
+
+    <!-- Aqui acaba a div do cabeçalho -->
+
+    <div class="pagina">
+
+        <!-- Aqui começa a div da barra lateral -->
+
+        <?php include 'componentes/sidebar.php'; ?>
+
+        <!-- Aqui acaba a div da barra lateral -->
+
+        <main>
+
+            <!-- Aqui começa a linha de cards-->
+
+            <div class="linha_cards">
+
+                <div class="chamados_hoje">
+                    <div class="card_topo">
+                        <p>Chamados de Hoje</p>
+                        <div class="fundo_icon" style="background: rgba(91, 156, 246, 0.12); color: #5b9cf6;">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                    </div>
+                    <div class="card_central">
+                        18
+                    </div>
+                    <div class="card_inferior">
+                        <b style="color: #4ade7b;">+3</b>
+                        em relação a ontem
+                    </div>
+                </div>
+
+                <div class="chamados_hoje">
+                    <div class="card_topo">
+                        <p>Em Atendimento</p>
+                        <div class="fundo_icon" style="background: rgba(245, 200, 66, 0.12); color: #f5c842;">
+                            <i class="fa-solid fa-truck-medical"></i>
+                        </div>
+                    </div>
+                    <div class="card_central">
+                        3
+                    </div>
+                    <div class="card_inferior" style="color: #f5c842;">
+                        <b>1</b>
+                        urgente pendente
+                    </div>
+                </div>
+
+                <div class="chamados_hoje">
+                    <div class="card_topo">
+                        <p>Resolvidos</p>
+                        <div class="fundo_icon" style="background: rgba(74, 222, 123, .12); color: #4ade7b;">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+                    </div>
+                    <div class="card_central">
+                        15
+                    </div>
+                    <div class="card_inferior">
+                        <b style="color: #4ade7b;">83%</b>
+                        taxa de solução
+                    </div>
+                </div>
+
+                <div class="chamados_hoje">
+                    <div class="card_topo">
+                        <p>Tempo Médio por Chamado</p>
+                        <div class="fundo_icon" style="background: rgba(242, 92, 84, 0.12); color: #f25c54;">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="card_central">
+                        24
+                        <small>min</small>
+                    </div>
+                    <div class="card_inferior">
+                        Resposta para o chamado
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aqui acaba linha de cards-->
+
+            <div class="linha_inferior">
+
+                <!-- Aqui começa a div dos chamados ativos -->
+
+                <div class="area_mapa">
+                    <div class="topo_area_mapa">
+                        <div class="texto_topo_mapa">
+                            <h1>Mapa em Tempo Real</h1>
+                            <p>Localização das equipes e chamados</p>
+                        </div>
+
+                        <button class="novo_chamado">
+                            <i class="fa-solid fa-plus"></i>
+                            <a class="novo_chamado_link" href="telas/novo_chamado.php">
+                                <label>Novo Chamado</label>
+                            </a>
+                            
+                        </button>
+                    </div>
+
+                    <div id="mapa">
+
+                    </div>
+                </div>
+
+                <div class="painel_direito">
+
+                    <div class="chamados_ativos">
+                        <div class="chamados_ativo_topo">
+                            <div>
+                                <div class="titulo_chamado_topo">Chamados Ativos</div>
+                                <div class="subtitulo_chamado_topo">3 em atendimento</div>
+                            </div>
+
+                            <div class="disponibilidade_sistema">
+                                <div class="bolinha_de_disponibilidade" style="color: #f5c842;"></div>
+                                <div style="color: #f5c842;">Ao Vivo</div>
+                            </div>
+                        </div>
+
+                        <div class="chamados">
+
+                            <div class="linha" style="background: #f25c54;"></div>
+
+                            <div class="conteudo_chamado">
+                                <div class="classificacao">
+                                    <div class="linha_topo_chamado">
+                                        <div class="prioridade" style="background-color: rgba(242, 92, 84, 0.12);">
+                                            <p style="color: #f25c54;">URGENTE</p>
+                                        </div>
+                                        <H1>CAM - 01-624</H1>
+                                        <H2>08:14</H2>
+                                    </div>
+                                </div>
+                                <div class="parte_baixo_chamados">
+                                    <p>Pneu furado na rodovia</p>
+                                    <div class="endereco">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <h2>Av. Castelo Branco, 1000</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chamados">
+
+                            <div class="linha" style="background: #1640ff;"></div>
+
+                            <div class="conteudo_chamado">
+                                <div class="classificacao">
+                                    <div class="linha_topo_chamado">
+                                        <div class="prioridade" style="background-color: rgba(91, 156, 246, 0.12);">
+                                            <p style="color: #5b9cf6;">NORMAL</p>
+                                        </div>
+                                        <H1>CAM - 01-624</H1>
+                                        <H2>08:14</H2>
+                                    </div>
+                                </div>
+                                <div class="parte_baixo_chamados">
+                                    <p>Pneu furado na rodovia</p>
+                                    <div class="endereco">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <h2>Av. Castelo Branco, 1000</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="chamados">
+
+                            <div class="linha" style="background: #fbff00;"></div>
+
+                            <div class="conteudo_chamado">
+                                <div class="classificacao">
+                                    <div class="linha_topo_chamado">
+                                        <div class="prioridade" style="background-color: rgba(245,200,66,0.12);">
+                                            <p style="color: #f5c842;">AGUARDANDO</p>
+                                        </div>
+                                        <H1>CAM - 01-624</H1>
+                                        <H2>08:14</H2>
+                                    </div>
+                                </div>
+                                <div class="parte_baixo_chamados">
+                                    <p>Pneu furado na rodovia</p>
+                                    <div class="endereco">
+                                        <i class="fa-solid fa-location-dot"></i>
+                                        <h2>Av. Castelo Branco, 1000</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aqui acaba a div dos chamados ativos -->
+
+                    <div class="estatus_equipe">
+                        <div class="topo_card_equipe">
+                            <h1>Status da Equipe</h1>
+                            <div class="caixa_estilo_ativo">
+                                <p>6 Ativos</p>
+                            </div>
+                        </div>
+
+                        <div class="inferior_card_equipe">
+                            <div class="card_funcinario">
+                                <div class="funcionario">
+                                    <div class="img_funcionario" style="background: #1a7a4a;">
+                                        <P>JO</P>
+                                    </div>
+                                    <div class="informações_usuario">
+                                        <h1>João</h1>
+                                        <p style="color: #f25c54;">Em socorro</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card_funcinario">
+                                <div class="funcionario">
+                                    <div class="img_funcionario" style="background: #1a4a7a;">
+                                        <p>FL</p>
+                                    </div>
+                                    <div class="informações_usuario">
+                                        <h1>Flúria</h1>
+                                        <p style="color: #f5c842;">Deslocamento</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card_funcinario">
+                                <div class="funcionario">
+                                    <div class="img_funcionario" style="background: #7a1a4a;">
+                                        <p>PE</p>
+                                    </div>
+                                    <div class="informações_usuario">
+                                        <h1>Pedro</h1>
+                                        <p style="color: #4ade7b;">Disponível</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card_funcinario">
+                                <div class="funcionario">
+                                    <div class="img_funcionario" style="background: #4a7a1a;">
+                                        <p>MA</p>
+                                    </div>
+                                    <div class="informações_usuario">
+                                        <h1>Maria</h1>
+                                        <p style="color: #4ade7b;">Disponível</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/mapa.js"></script>
+
+</body>
+
+</html>
