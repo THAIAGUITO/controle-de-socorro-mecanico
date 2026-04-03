@@ -19,17 +19,21 @@
 
     <!-- Aqui começa a div do cabeçalho -->
 
-    <div id="cabecalho">
-        <header>
+    <header class="cabecalho">
+        <div class="esquerda_cabecalho">
             <div class="logo">
                 <img src="imagens/logo.svg" alt="Logo da empresa">
             </div>
+        </div>
 
+        <div class="centro_cabecalho">
             <div class="search_box">
                 <i class="fa-solid fa-magnifying-glass"></i>
                 <input type="text" id="pesquisa" placeholder="Buscar chamado, placa, endereço...">
             </div>
+        </div>
 
+        <div class="direita_cabecalho">
             <div class="icones_cabecalho">
 
                 <a href="telas/login.html">
@@ -46,9 +50,9 @@
                     <i class="fa-solid fa-right-to-bracket"></i>
                 </div>
             </div>
+        </div>
 
-        </header>
-    </div>
+    </header>
 
     <!-- Aqui acaba a div do cabeçalho -->
 
@@ -77,6 +81,14 @@
                 </li>
                 <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
             </ul>
+
+            <div style="font-size: 11px; color: #5a7460; margin-bottom: 8px;">
+                Status do sistema
+            </div>
+            <span class="disponibilidade_sistema_sidebar">
+                <div class="bolinha_disponibilidade_sidebar"></div>
+                Online
+            </span>
         </div>
 
         <!-- Aqui acaba a div da barra lateral -->
@@ -164,7 +176,7 @@
                             <h1>Mapa em Tempo Real</h1>
                             <p>Localização das equipes e chamados</p>
                         </div>
-                        
+
                         <button class="novo_chamado">
                             <i class="fa-solid fa-plus"></i>
                             <label>Novo Chamado</label>
@@ -186,8 +198,8 @@
                             </div>
 
                             <div class="disponibilidade_sistema">
-                                <div class="bolinha_de_disponibilidade"></div>
-                                <div>Ao Vivo</div>
+                                <div class="bolinha_de_disponibilidade" style="color: #f5c842;"></div>
+                                <div style="color: #f5c842;">Ao Vivo</div>
                             </div>
                         </div>
 
