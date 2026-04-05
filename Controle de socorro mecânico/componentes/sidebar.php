@@ -1,3 +1,5 @@
+ <link rel="stylesheet" href="<?php echo str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2); ?>estilos/style.css">
+ 
  <div class="sidebar">
             <ul>
                 <li>

@@ -1,7 +1,9 @@
+<link rel="stylesheet" href="<?php echo str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2); ?>estilos/style.css">
+
 <header class="cabecalho">
         <div class="esquerda_cabecalho">
             <div class="logo">
-                <img src="imagens/logo.svg" alt="Logo da empresa">
+                <img src="../imagens/logo.svg" alt="Logo da empresa">
             </div>
         </div>
 
