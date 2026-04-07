@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="../estilos/novo_chamado.css">
 </head>
 
 <body>
@@ -19,7 +21,32 @@
     <div class="pagina">
         <?php include __DIR__ . '/../componentes/sidebar.php'; ?>
 
+        <main>
+            <div class="conteudo">
+                <div class="topo_conteudo">
+                    <div class="esquerda_topo">
+                        <button class="voltar">
+                            <i class="fa-solid fa-arrow-left"></i>
+                            voltar
+                        </button>
+
+                        <div class="texto_topo_conteudo">
+                            <div class="texto_topo_conteudo">
+                                <div class="titulo_topo">Novo chamado</div>
+                                <div class="descricao_topo">Preencha os dados para registrar um novo chamado</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="salvar_chamado">
+                        <i class="fa-solid fa-floppy-disk"></i>
+                        Salvar Chamado
+                    </button>
+                </div>
+            </div>
+        </main>
     </div>
+
 </body>
 
 </html>

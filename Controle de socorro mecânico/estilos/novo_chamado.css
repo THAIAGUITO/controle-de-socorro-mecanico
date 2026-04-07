@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    background: #0b0f0d;
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+}
+
+.topo_conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.esquerda_topo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.texto_topo_conteudo {
+    display: flex;
+    flex-direction: column;
+}
+
+.voltar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #161e18;
+    border: rgba(255, 255, 255, 0.06);
+    border-radius: 8px;
+    color: #7a9880;
+    font-family: 'DM Sans', sans-serif;
+    padding: 8px 14px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.titulo_topo {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.descricao_topo {
+    color: #7a9880;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+.salvar_chamado {
+    background: #1a8a36;
+    border-radius: 8px;
+    font-family: 'Syne', sans-serif;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
