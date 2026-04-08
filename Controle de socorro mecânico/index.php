@@ -115,12 +115,13 @@
                             <p>Localização das equipes e chamados</p>
                         </div>
 
-                        <button class="novo_chamado">
-                            <i class="fa-solid fa-plus"></i>
-                            <a class="novo_chamado_link" href="telas/novo_chamado.php">
-                                <label>Novo Chamado</label>
-                            </a>
-                            
+                        <a class="novo_chamado_link" href="telas/novo_chamado.php">
+                            <button class="novo_chamado">
+                                <i class="fa-solid fa-plus"></i>
+                                Novo Chamado
+                            </button>
+                        </a>
+
                         </button>
                     </div>
 

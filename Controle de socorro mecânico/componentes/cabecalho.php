@@ -2,11 +2,9 @@
 
 <header class="cabecalho">
     <div class="esquerda_cabecalho">
-        <a href="../index.php">
             <div class="logo">
-                <img src="../imagens/logo.svg" alt="Logo da empresa">
+                <img src="imagens/logo.svg" alt="Logo da empresa">
             </div>
-        </a>
     </div>
 
     <div class="centro_cabecalho">
