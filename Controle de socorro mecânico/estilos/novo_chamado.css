@@ -22,6 +22,12 @@ main {
     gap: 20px;
 }
 
+.conteudo_formulário {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 .topo_conteudo {
     display: flex;
     align-items: center;
@@ -87,7 +93,7 @@ main {
     padding: 22px;
 }
 
-.topo_inf_veiculo {
+.topo_formulario {
     display: flex;
     font-family: 'Syne', sans-serif;
     font-size: 14px;
@@ -147,4 +153,11 @@ main {
     color: #5a7460;
     font-size: 13px;
     flex-shrink: 0;
+}
+
+.detalhes_do_chamado {
+    background: #161e18;
+    border: rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 22px;
 }

@@ -13,6 +13,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <link rel="stylesheet" href="../estilos/novo_chamado.css">
+
+    <?php $base_url = '../'; ?>
 </head>
 
 <body>
@@ -46,8 +48,11 @@
             </div>
 
             <div class="conteudo_formulário">
+
+                <!-- Aqui começa o formulário de informações do veículo -->
+
                 <div class="inf_veiculo">
-                    <div class="topo_inf_veiculo">
+                    <div class="topo_formulario">
                         <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
                         <p>Informações do Veículo</p>
                     </div>
@@ -88,9 +93,16 @@
                                     </div>
                                 </div>
                             </div>
-
-                            
                         </div>
+                    </div>
+                </div>
+
+                <!-- Aqui acaba o formulário de informações do veículo -->
+
+                <div class="detalhes_do_chamado">
+                    <div class="topo_formulario">
+                        <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
+                        <p>Detalhes do Chamado</p>
                     </div>
                 </div>
             </div>

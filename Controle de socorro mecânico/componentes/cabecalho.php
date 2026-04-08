@@ -3,7 +3,7 @@
 <header class="cabecalho">
     <div class="esquerda_cabecalho">
             <div class="logo">
-                <img src="imagens/logo.svg" alt="Logo da empresa">
+                <img src="<?php echo $base_url; ?>imagens/logo.svg" alt="Logo da empresa">
             </div>
     </div>
 

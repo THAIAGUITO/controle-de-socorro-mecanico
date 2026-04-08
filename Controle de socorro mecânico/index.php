@@ -13,6 +13,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <title>CONTROLE DE SOCORRO</title>
+
+    <?php $base_url = ''; ?>
 </head>
 
 <body>
