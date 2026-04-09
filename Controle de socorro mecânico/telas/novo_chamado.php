@@ -99,18 +99,116 @@
 
                 <!-- Aqui acaba o formulário de informações do veículo -->
 
+                <!-- Aqui começa o formulário de detalhes do chamado -->
+
                 <div class="detalhes_do_chamado">
                     <div class="topo_formulario">
                         <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
                         <p>Detalhes do Chamado</p>
                     </div>
+
+                    <div class="duas_linhas_cards dois">
+                        <div class="campo">
+                            <label>Tipo de problema</label>
+                            <div class="input_tipo_problema">
+                                <i class="fa-solid fa-wrench"></i>
+                                <select>
+                                    <option value disabled selected>Selecione o problema</option>
+                                    <option value="pneu_furado">Pneu Furado</option>
+                                    <option value="bateria">Problema de bateria</option>
+                                    <option value="superaquecimento">Superaquecimento</option>
+                                    <option value="falta_combustivel">Falta de combustível</option>
+                                    <option value="acidente">Acidente</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label>Prioridade</label>
+                            <div class="botoes_prioridade">
+                                <button class="botao_prioridade urgente">🔴 URGENTE</button>
+                                <button class="botao_prioridade baixa">🟢 NORMAL</button>
+                                <button class="botao_prioridade media">🟡 AGUARDANDO</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="duas_linhas_cards um">
+                        <div class="campo">
+                            <label for="descricao">Descrição do problema</label>
+                            <textarea id="descricao" placeholder="Descreva oque está acontecendo com o veículo..."></textarea>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Aqui acaba o formulário de detalhes do chamado -->
+                
+                <div class="localizacao_chamado">
+                    <div class="topo_formulario">
+                        <i class="fa-solid fa-map-location-dot" style="color: #4ade7b; font-size: 13px;"></i>
+                        <p>Localização</p>
+                    </div>
+
+                    <div class="duas_linhas_cards dois">
+                        <div class="campo">
+                            <label>Endereço</label>
+                            <div class="input_endereco">
+                                <i class="fa-solid fa-road"></i>
+                                <input type="text" placeholder="Rua, Avenida, Rodovia...">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label>NÚmero / KM</label>
+                            <div class="input_endereco">
+                                <i class="fa-solid fa-road"></i>
+                                <input type="text" placeholder="Rua, Avenida, Rodovia...">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="duas_linhas_cards tres">
+                        <div class="campo">
+                            <label>Bairro</label>
+                            <div class="input_endereco">
+                                <i class="fa-solid fa-road"></i>
+                                <input type="text" placeholder="Bairro">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label>Cidade</label>
+                            <div class="input_endereco">
+                                <i class="fa-solid fa-road"></i>
+                                <input type="text" placeholder="Cidade">
+                            </div>
+                        </div>
+
+                        <div class="campo">
+                            <label>CEP</label>
+                            <div class="input_endereco">
+                                <i class="fa-solid fa-road"></i>
+                                <input type="text" placeholder="00000-000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="duas_linhas_cards um">
+                        <div class="campo">
+                            <div id="mapa">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
-
+            <div>
+                
+            </div>
         </main>
     </div>
-
 </body>
-
 </html>
