@@ -10,7 +10,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <link rel="stylesheet" href="../estilos/novo_chamado.css">
 
@@ -34,10 +33,8 @@
                     </a>
 
                     <div class="texto_topo_conteudo">
-                        <div class="texto_topo_conteudo">
-                            <div class="titulo_topo">Novo chamado</div>
-                            <div class="descricao_topo">Preencha os dados para registrar um novo chamado</div>
-                        </div>
+                        <div class="titulo_topo">Novo chamado</div>
+                        <div class="descricao_topo">Preencha os dados para registrar um novo chamado</div>
                     </div>
                 </div>
 
@@ -49,15 +46,18 @@
 
             <div class="conteudo_formulário">
 
-                <!-- Aqui começa o formulário de informações do veículo -->
+                <!-- Aqui começa a coluna da esquerda com os formulários de informações do veículo, detalhes do chamado e localização -->
 
-                <div class="inf_veiculo">
-                    <div class="topo_formulario">
-                        <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
-                        <p>Informações do Veículo</p>
-                    </div>
-                    <div class="formulario_inf_veiculos">
-                        <div class="cards_supeiores_inf_veiculo">
+                <div class="conteudo_esquerda">
+
+                    <!-- Aqui começa o formulário de informações do veículo -->
+
+                    <div class="caixa_formulario">
+                        <div class="topo_formulario">
+                            <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Informações do Veículo</p>
+                        </div>
+                        <div class="formulario_inf_veiculos">
                             <div class="duas_linhas_cards dois">
                                 <div class="campo">
                                     <label for="placa">Placa do veículo</label>
@@ -95,120 +95,245 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- Aqui acaba o formulário de informações do veículo -->
+
+                    <!-- Aqui começa o formulário de detalhes do chamado -->
+
+                    <div class="caixa_formulario">
+                        <div class="topo_formulario">
+                            <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Detalhes do Chamado</p>
+                        </div>
+
+                        <div class="duas_linhas_cards dois">
+                            <div class="campo">
+                                <label>Tipo de problema</label>
+                                <div class="input_tipo_problema">
+                                    <i class="fa-solid fa-wrench"></i>
+                                    <select>
+                                        <option value disabled selected>Selecione o problema</option>
+                                        <option value="pneu_furado">Pneu Furado</option>
+                                        <option value="bateria">Problema de bateria</option>
+                                        <option value="superaquecimento">Superaquecimento</option>
+                                        <option value="falta_combustivel">Falta de combustível</option>
+                                        <option value="acidente">Acidente</option>
+                                        <option value="outro">Outro</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <label>Prioridade</label>
+                                <div class="botoes_prioridade">
+                                    <button class="botao_prioridade urgente">🔴 URGENTE</button>
+                                    <button class="botao_prioridade baixa">🟢 NORMAL</button>
+                                    <button class="botao_prioridade media">🟡 AGUARDANDO</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="duas_linhas_cards um">
+                            <div class="campo">
+                                <label for="descricao">Descrição do problema</label>
+                                <textarea id="descricao" placeholder="Descreva oque está acontecendo com o veículo..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aqui acaba o formulário de detalhes do chamado -->
+
+                    <!-- Aqui começa o formulário de localização do chamado -->
+
+                    <div class="caixa_formulario">
+                        <div class="topo_formulario">
+                            <i class="fa-solid fa-map-location-dot" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Localização</p>
+                        </div>
+
+                        <div class="duas_linhas_cards dois">
+                            <div class="campo">
+                                <label>Endereço</label>
+                                <div class="input_endereco">
+                                    <i class="fa-solid fa-road"></i>
+                                    <input type="text" placeholder="Rua, Avenida, Rodovia...">
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <label>NÚmero / KM</label>
+                                <div class="input_endereco">
+                                    <i class="fa-solid fa-road"></i>
+                                    <input type="text" placeholder="Rua, Avenida, Rodovia...">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="duas_linhas_cards tres">
+                            <div class="campo">
+                                <label>Bairro</label>
+                                <div class="input_endereco">
+                                    <i class="fa-solid fa-road"></i>
+                                    <input type="text" placeholder="Bairro">
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <label>Cidade</label>
+                                <div class="input_endereco">
+                                    <i class="fa-solid fa-road"></i>
+                                    <input type="text" placeholder="Cidade">
+                                </div>
+                            </div>
+
+                            <div class="campo">
+                                <label>CEP</label>
+                                <div class="input_endereco">
+                                    <i class="fa-solid fa-road"></i>
+                                    <input type="text" placeholder="00000-000">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="duas_linhas_cards um">
+                            <div class="campo">
+                                <div id="mapa">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Aqui acaba o formulário de localização do chamado -->
+
                 </div>
 
-                <!-- Aqui acaba o formulário de informações do veículo -->
+                <!-- Aqui acaba a coluna da esquerda com os formulários de informações do veículo, detalhes do chamado e localização -->
 
-                <!-- Aqui começa o formulário de detalhes do chamado -->
 
-                <div class="detalhes_do_chamado">
-                    <div class="topo_formulario">
-                        <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
-                        <p>Detalhes do Chamado</p>
+                <!-- Aqui começa a coluna da direita com o resumo do chamado, atribuição de equipe e histórico de ações -->
+
+                <div class="conteudo_direita">
+
+                    <!-- Aqui começa o resumo do chamado -->
+
+                    <div class="card_direita">
+                        <div class="topo_card_direita">
+                            <i class="fa-solid fa-clipboard-list" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Resumo do Chamado</p>
+                        </div>
+
+                        <div class="etapa_chamada">
+                            <div class="bolinha_etapa"></div>
+                            <div class="texto_etapa">Aguardando Envio</div>
+                        </div>
+
+                        <div class="resumo_item">
+                            <span class="resumo_label">Placa</span>
+                            <span class="resumo_valor">ABC-1234</span>
+                        </div>
+
+                        <div class="resumo_item">
+                            <span class="resumo_label">Problema</span>
+                            <span class="resumo_valor">Pneu Furado</span>
+                        </div>
+
+                        <div class="resumo_item">
+                            <span class="resumo_label">Prioridade</span>
+                            <span class="resumo_valor" style="color: #f25c54;">URGENTE</span>
+                        </div>
+
+                        <div class="resumo_item">
+                            <span class="resumo_label">Endereço</span>
+                            <span class="resumo_valor">Av. Castelo Branco, 1000</span>
+                        </div>
+
+                        <div class="resumo_item">
+                            <span class="resumo_label">Equipe</span>
+                            <span class="resumo_valor" style="color: #f5c842;">Não Atribuída</span>
+                        </div>
                     </div>
 
-                    <div class="duas_linhas_cards dois">
-                        <div class="campo">
-                            <label>Tipo de problema</label>
-                            <div class="input_tipo_problema">
-                                <i class="fa-solid fa-wrench"></i>
-                                <select>
-                                    <option value disabled selected>Selecione o problema</option>
-                                    <option value="pneu_furado">Pneu Furado</option>
-                                    <option value="bateria">Problema de bateria</option>
-                                    <option value="superaquecimento">Superaquecimento</option>
-                                    <option value="falta_combustivel">Falta de combustível</option>
-                                    <option value="acidente">Acidente</option>
-                                    <option value="outro">Outro</option>
-                                </select>
+                    <!-- Aqui acaba o resumo do chamado -->
+
+                    <!-- Aqui começa a seção de atribuição de equipe -->
+
+                    <div class="card_direita">
+                        <div class="topo_card_direita">
+                            <i class="fa-solid fa-users" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Atribuir Equipe</p>
+                        </div>
+                        <div class="equipe_item selected">
+                            <div class="avatar" style="background:#1a7a4a;">JO</div>
+                            <div>
+                                <div class="nome_funcionario">João Silva</div>
+                                <div class="status_funcionario">Disponível</div>
                             </div>
                         </div>
 
-                        <div class="campo">
-                            <label>Prioridade</label>
-                            <div class="botoes_prioridade">
-                                <button class="botao_prioridade urgente">🔴 URGENTE</button>
-                                <button class="botao_prioridade baixa">🟢 NORMAL</button>
-                                <button class="botao_prioridade media">🟡 AGUARDANDO</button>
+                        <div class="equipe_item">
+                            <div class="avatar" style="background: #1a4a7a;">FL</div>
+                            <div>
+                                <div class="nome_funcionario">Flúria Costa</div>
+                                <div class="status_funcionario" style="color: #f5c842;">Em deslocamento</div>
+                            </div>
+                        </div>
+
+                        <div class="equipe_item">
+                            <div class="avatar" style="background: #7a1a4a;">PR</div>
+                            <div>
+                                <div class="nome_funcionario">Pedro Rocha</div>
+                                <div class="status_funcionario">Disponível</div>
+                            </div>
+                        </div>
+
+                        <div class="equipe_item">
+                            <div class="avatar" style="background: #4a7a1a;">MS</div>
+                            <div>
+                                <div class="nome_funcionario">Maria Souza</div>
+                                <div class="status_funcionario">Disponível</div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="duas_linhas_cards um">
-                        <div class="campo">
-                            <label for="descricao">Descrição do problema</label>
-                            <textarea id="descricao" placeholder="Descreva oque está acontecendo com o veículo..."></textarea>
+                    <!-- Aqui acaba a seção de atribuição de equipe -->
+
+                    <!-- Aqui começa a seção de histórico de ações -->
+
+                    <div class="card_direita">
+                        <div class="topo_card_direita">
+                            <i class="fa-solid fa-clock-rotate-left" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Histórico de Ações</p>
+                        </div>
+
+                        <div class="historico_de_acoes">
+                            <div class="bolinha_do_historico" style="background: #4ade7b;"></div>
+                            <div>
+                                <div class="titulo_historico">Chamado criado por MR</div>
+                                <div class="subtitulo_historico">Agora</div>
+                            </div>
+                        </div>
+
+                        <div class="historico_de_acoes">
+                            <div class="bolinha_do_historico" style="background: #5a7460;"></div>
+                            <div>
+                                <div class="titulo_historico">Aguardando atribuição de equipe</div>
+                                <div class="subtitulo_historico">Agora</div>
+                            </div>
                         </div>
                     </div>
+
+                    <!-- Aqui acaba a seção de histórico de ações -->
+
                 </div>
 
-                <!-- Aqui acaba o formulário de detalhes do chamado -->
-                
-                <div class="localizacao_chamado">
-                    <div class="topo_formulario">
-                        <i class="fa-solid fa-map-location-dot" style="color: #4ade7b; font-size: 13px;"></i>
-                        <p>Localização</p>
-                    </div>
+                <!-- Aqui acaba a coluna da direita com o resumo do chamado, atribuição de equipe e histórico de ações -->
 
-                    <div class="duas_linhas_cards dois">
-                        <div class="campo">
-                            <label>Endereço</label>
-                            <div class="input_endereco">
-                                <i class="fa-solid fa-road"></i>
-                                <input type="text" placeholder="Rua, Avenida, Rodovia...">
-                            </div>
-                        </div>
-
-                        <div class="campo">
-                            <label>NÚmero / KM</label>
-                            <div class="input_endereco">
-                                <i class="fa-solid fa-road"></i>
-                                <input type="text" placeholder="Rua, Avenida, Rodovia...">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="duas_linhas_cards tres">
-                        <div class="campo">
-                            <label>Bairro</label>
-                            <div class="input_endereco">
-                                <i class="fa-solid fa-road"></i>
-                                <input type="text" placeholder="Bairro">
-                            </div>
-                        </div>
-
-                        <div class="campo">
-                            <label>Cidade</label>
-                            <div class="input_endereco">
-                                <i class="fa-solid fa-road"></i>
-                                <input type="text" placeholder="Cidade">
-                            </div>
-                        </div>
-
-                        <div class="campo">
-                            <label>CEP</label>
-                            <div class="input_endereco">
-                                <i class="fa-solid fa-road"></i>
-                                <input type="text" placeholder="00000-000">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="duas_linhas_cards um">
-                        <div class="campo">
-                            <div id="mapa">
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div>
-                
             </div>
         </main>
     </div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="../scripts/mapa_chamado.js"></script>
 </body>
+
 </html>
