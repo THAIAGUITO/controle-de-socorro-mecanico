@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <button class="salvar_chamado">
+                <button id="salvar_chamado" onclick="atualizar()">
                     <i class="fa-solid fa-floppy-disk"></i>
                     Salvar Chamado
                 </button>
@@ -61,35 +61,35 @@
                             <div class="duas_linhas_cards dois">
                                 <div class="campo">
                                     <label for="placa">Placa do veículo</label>
-                                    <div class="input_placa">
+                                    <div class="caixa_inf_veiculo" id="input_placa">
                                         <i class="fa-solid fa-id-card"></i>
-                                        <input type="text" placeholder="Digite a placa do veículo">
+                                        <input id="placa" type="text" placeholder="Digite a placa do veículo">
                                     </div>
                                 </div>
 
                                 <div class="campo">
-                                    <label for="placa">Modelo / Tipo</label>
-                                    <div class="input_placa">
+                                    <label for="modelo">Modelo / Tipo</label>
+                                    <div class="caixa_inf_veiculo" id="input_modelo">
                                         <i class="fa-solid fa-car"></i>
-                                        <input type="text" placeholder="Ex: Caminhão, Carro, Moto...">
+                                        <input id="modelo" type="text" placeholder="Ex: Caminhão, Carro, Moto...">
                                     </div>
                                 </div>
                             </div>
 
                             <div class="duas_linhas_cards dois">
                                 <div class="campo">
-                                    <label for="placa">Nome do Solicitante</label>
-                                    <div class="input_placa">
+                                    <label for="nome_solicitante">Nome do Solicitante</label>
+                                    <div class="caixa_inf_veiculo" id="input_nome">
                                         <i class="fa-solid fa-user"></i>
-                                        <input type="text" placeholder="Nome Completo">
+                                        <input id="nome_solicitante" type="text" placeholder="Nome Completo">
                                     </div>
                                 </div>
 
                                 <div class="campo">
-                                    <label for="placa">Telefone de contato</label>
-                                    <div class="input_placa">
-                                        <i class="fa-solid fa-phone"></i>
-                                        <input type="text" placeholder="(12) 99999-9999">
+                                    <label for="telefone">Telefone de contato</label>
+                                    <div class="caixa_inf_veiculo" >
+                                        <i class="fa-solid fa-phone" id="input_telefone"></i>
+                                        <input id="telefone" type="number" placeholder="(12) 99999-9999">
                                     </div>
                                 </div>
                             </div>
@@ -102,7 +102,7 @@
 
                     <div class="caixa_formulario">
                         <div class="topo_formulario">
-                            <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px;"></i>
+                            <i class="fa-solid fa-triangle-exclamation" style="color: #4ade7b; font-size: 13px;"></i>
                             <p>Detalhes do Chamado</p>
                         </div>
 
@@ -136,7 +136,7 @@
                         <div class="duas_linhas_cards um">
                             <div class="campo">
                                 <label for="descricao">Descrição do problema</label>
-                                <textarea id="descricao" placeholder="Descreva oque está acontecendo com o veículo..."></textarea>
+                                <div class="caixa_descricao"><textarea id="descricao" placeholder="Descreva oque está acontecendo com o veículo..."></textarea></div>
                             </div>
                         </div>
                     </div>
@@ -229,12 +229,12 @@
 
                         <div class="resumo_item">
                             <span class="resumo_label">Placa</span>
-                            <span class="resumo_valor">ABC-1234</span>
+                            <span class="resumo_valor"></span>
                         </div>
 
                         <div class="resumo_item">
                             <span class="resumo_label">Problema</span>
-                            <span class="resumo_valor">Pneu Furado</span>
+                            <span class="resumo_valor"></span>
                         </div>
 
                         <div class="resumo_item">
@@ -334,6 +334,7 @@
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="../scripts/mapa_chamado.js"></script>
+<script src="../scripts/novo_chamado.js"></script>
 </body>
 
 </html>
