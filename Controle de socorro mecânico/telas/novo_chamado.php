@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <button id="salvar_chamado" onclick="atualizar()">
+                <button id="salvar_chamado" onclick="senha_errada()">
                     <i class="fa-solid fa-floppy-disk"></i>
                     Salvar Chamado
                 </button>
@@ -87,8 +87,8 @@
 
                                 <div class="campo">
                                     <label for="telefone">Telefone de contato</label>
-                                    <div class="caixa_inf_veiculo" >
-                                        <i class="fa-solid fa-phone" id="input_telefone"></i>
+                                    <div class="caixa_inf_veiculo" id="input_telefone">
+                                        <i class="fa-solid fa-phone"></i>
                                         <input id="telefone" type="number" placeholder="(12) 99999-9999">
                                     </div>
                                 </div>
