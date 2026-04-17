@@ -22,11 +22,6 @@ main {
     gap: 20px;
 }
 
-.caixa_inf_veiculo:focus-within, .input_endereco:focus-within, .caixa_descricao:focus-within {
-    border-color: #1a8a36;
-    box-shadow: 0 0 0 3px rgba(26, 138, 54, 0.12);
-}
-
 .conteudo_formulário {
     display: grid;
     grid-template-columns: 1fr 340px;
@@ -141,7 +136,7 @@ main {
     font-weight: 500;
 }
 
-.caixa_inf_veiculo, .input_endereco, .input_endereco{
+.caixa_input{
     display: flex;
     align-items: center;
     background: #111712;
@@ -151,7 +146,7 @@ main {
     gap: 8px;
 }
 
-.caixa_inf_veiculo input, .input_endereco input {
+.caixa_input input {
     background: none;
     border: none;
     outline: none;
@@ -161,15 +156,26 @@ main {
     width: 100%;
 }
 
-.caixa_inf_veiculo input::placeholder, .input_endereco input::placeholder, .input_endereco input::placeholder, .input_modelo input::placeholder, .input_nome input::placeholder, .input_telefone input::placeholder {
+.caixa_input input::placeholder, .input_modelo input::placeholder, .input_nome input::placeholder, .input_telefone input::placeholder {
     color: #7a9880;
 }
 
-.caixa_inf_veiculo i, .input_endereco i, .input_endereco i {
+.caixa_input i {
     color: #5a7460;
     font-size: 13px;
     flex-shrink: 0;
 }
+
+.selecionado {
+    border-color: #1a8a36;
+    box-shadow: 0 0 0 3px rgba(26, 138, 54, 0.12);
+}
+
+.falta_preencher {
+    border-color: #f25c54;
+    box-shadow: 0 0 0 3px rgba(242, 92, 84, 0.12);
+}
+
 
 .topo_forms_tipo_problema {
     display: flex;

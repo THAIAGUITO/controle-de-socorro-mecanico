@@ -1,29 +1,46 @@
-const placa = document.getElementById("placa")
-const modelo = document.getElementById("modelo")
-const nome = document.getElementById("nome_solicitante")
-const telefone = document.getElementById("telefone")
+const inputs_inf_veiculo = [...document.querySelectorAll('.input_inf')]
+const btn_salvar_chamado = document.getElementById('salvar_chamado')
 
-input.addEventListener('focus', () => {
-     console.log('O campo foi selecionado (foco).');
+function verificar_preenchimento() {
+    inputs_inf_veiculo.forEach((el) => {
+        if (el.value === '') {
+            el.parentElement.classList.add('falta_preencher')
+        }
+    })
+}
+
+btn_salvar_chamado.addEventListener('click', () => {
+    verificar_preenchimento()
+
+    const [placa, modelo, nome, telefone] = inputs_inf_veiculo.map(el => el.value)
+    console.log("A placa é" + placa + ", o nome é" + nome + ", o modelo é" + modelo + ", o telefone é" + telefone)
+
+    const inf_placa = document.getElementById('inf_placa')
+    const inf_modelo = document.getElementById('inf_modelo')
+    const inf_nome = document.getElementById('inf_nome')
+    const inf_telefone = document.getElementById('inf_telefone')
+
+    inf_placa.textContent = placa
+    inf_modelo.textContent = modelo
+    inf_nome.textContent = nome
+    inf_telefone.textContent = telefone
 })
 
-function senha_errada() {
-    if (placa.value == "" || modelo.value == "" || nome.value == "" || telefone.value == "") {
-        var troca_placa = document.getElementById('input_placa')
-        troca_placa.style.borderColor = '#ff3c00bd'
-        troca_placa.style.boxShadow = '0 0 0 3px rgba(255, 0, 0, 0.15)'
-        var troca_modelo = document.getElementById('input_modelo')
-        troca_modelo.style.borderColor = '#ff3c00bd'
-        troca_modelo.style.boxShadow = '0 0 0 3px rgba(255, 0, 0, 0.15)'
-        var troca_nome = document.getElementById('input_nome')
-        troca_nome.style.borderColor = '#ff3c00bd'
-        troca_nome.style.boxShadow = '0 0 0 3px rgba(255, 0, 0, 0.15)'
-        var troca_telefone = document.getElementById('input_telefone')
-        troca_telefone.style.borderColor = '#ff3c00bd'
-        troca_telefone.style.boxShadow = '0 0 0 3px rgba(255, 0, 0, 0.15)'
-    } else {
-        window.alert("Deu Certo")
-}
-}
+inputs_inf_veiculo.forEach((el) => {
+    el.addEventListener('focus', (evt) => {
+        inputs_inf_veiculo.forEach(i => {
+            i.parentElement.classList.remove('falta_preencher')
+            i.parentElement.classList.remove('selecionado')
+        })
+        evt.target.parentElement.classList.add('selecionado')
+    })
 
+    el.addEventListener('blur', (evt) => {
+        evt.target.parentElement.classList.remove('selecionado')
 
+        if (evt.target.value === '') {
+            evt.target.parentElement.classList.add('falta_preencher')
+        }
+    })
+
+})

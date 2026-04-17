@@ -38,7 +38,7 @@
                     </div>
                 </div>
 
-                <button id="salvar_chamado" onclick="senha_errada()">
+                <button id="salvar_chamado">
                     <i class="fa-solid fa-floppy-disk"></i>
                     Salvar Chamado
                 </button>
@@ -61,17 +61,17 @@
                             <div class="duas_linhas_cards dois">
                                 <div class="campo">
                                     <label for="placa">Placa do veículo</label>
-                                    <div class="caixa_inf_veiculo" id="input_placa">
+                                    <div class="caixa_input">
                                         <i class="fa-solid fa-id-card"></i>
-                                        <input id="placa" type="text" placeholder="Digite a placa do veículo">
+                                        <input id="placa" class="input_inf" type="text" placeholder="Digite a placa do veículo">
                                     </div>
                                 </div>
 
                                 <div class="campo">
                                     <label for="modelo">Modelo / Tipo</label>
-                                    <div class="caixa_inf_veiculo" id="input_modelo">
+                                    <div class="caixa_input">
                                         <i class="fa-solid fa-car"></i>
-                                        <input id="modelo" type="text" placeholder="Ex: Caminhão, Carro, Moto...">
+                                        <input id="modelo" class="input_inf" type="text" placeholder="Ex: Caminhão, Carro, Moto...">
                                     </div>
                                 </div>
                             </div>
@@ -79,17 +79,17 @@
                             <div class="duas_linhas_cards dois">
                                 <div class="campo">
                                     <label for="nome_solicitante">Nome do Solicitante</label>
-                                    <div class="caixa_inf_veiculo" id="input_nome">
+                                    <div class="caixa_input">
                                         <i class="fa-solid fa-user"></i>
-                                        <input id="nome_solicitante" type="text" placeholder="Nome Completo">
+                                        <input id="nome_solicitante" class="input_inf" type="text" placeholder="Nome Completo">
                                     </div>
                                 </div>
 
                                 <div class="campo">
                                     <label for="telefone">Telefone de contato</label>
-                                    <div class="caixa_inf_veiculo" id="input_telefone">
+                                    <div class="caixa_input">
                                         <i class="fa-solid fa-phone"></i>
-                                        <input id="telefone" type="number" placeholder="(12) 99999-9999">
+                                        <input id="telefone" class="input_inf" type="number" placeholder="(12) 99999-9999">
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +154,7 @@
                         <div class="duas_linhas_cards dois">
                             <div class="campo">
                                 <label>Endereço</label>
-                                <div class="input_endereco">
+                                <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
                                     <input type="text" placeholder="Rua, Avenida, Rodovia...">
                                 </div>
@@ -162,7 +162,7 @@
 
                             <div class="campo">
                                 <label>NÚmero / KM</label>
-                                <div class="input_endereco">
+                                <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
                                     <input type="text" placeholder="Rua, Avenida, Rodovia...">
                                 </div>
@@ -172,7 +172,7 @@
                         <div class="duas_linhas_cards tres">
                             <div class="campo">
                                 <label>Bairro</label>
-                                <div class="input_endereco">
+                                <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
                                     <input type="text" placeholder="Bairro">
                                 </div>
@@ -180,7 +180,7 @@
 
                             <div class="campo">
                                 <label>Cidade</label>
-                                <div class="input_endereco">
+                                <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
                                     <input type="text" placeholder="Cidade">
                                 </div>
@@ -188,7 +188,7 @@
 
                             <div class="campo">
                                 <label>CEP</label>
-                                <div class="input_endereco">
+                                <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
                                     <input type="text" placeholder="00000-000">
                                 </div>
@@ -229,27 +229,27 @@
 
                         <div class="resumo_item">
                             <span class="resumo_label">Placa</span>
-                            <span class="resumo_valor"></span>
+                            <span class="resumo_valor" id="inf_placa"></span>
                         </div>
 
                         <div class="resumo_item">
                             <span class="resumo_label">Problema</span>
-                            <span class="resumo_valor"></span>
+                            <span class="resumo_valor" id="inf_problema"></span>
                         </div>
 
                         <div class="resumo_item">
                             <span class="resumo_label">Prioridade</span>
-                            <span class="resumo_valor" style="color: #f25c54;">URGENTE</span>
+                            <span class="resumo_valor" id="inf_prioridade" style="color: #f25c54;">URGENTE</span>
                         </div>
 
                         <div class="resumo_item">
                             <span class="resumo_label">Endereço</span>
-                            <span class="resumo_valor">Av. Castelo Branco, 1000</span>
+                            <span class="resumo_valor" id="inf_endereco">Av. Castelo Branco, 1000</span>
                         </div>
 
                         <div class="resumo_item">
                             <span class="resumo_label">Equipe</span>
-                            <span class="resumo_valor" style="color: #f5c842;">Não Atribuída</span>
+                            <span class="resumo_valor" id="inf_equipe" style="color: #f5c842;">Não Atribuída</span>
                         </div>
                     </div>
 
