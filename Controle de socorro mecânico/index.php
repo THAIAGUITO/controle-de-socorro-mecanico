@@ -13,15 +13,13 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <title>CONTROLE DE SOCORRO</title>
-
-    <?php $base_url = ''; ?>
 </head>
 
 <body>
 
     <!-- Aqui começa a div do cabeçalho -->
 
-    <?php include 'componentes/cabecalho.php'; ?>
+    <?php include __DIR__ . '/componentes/cabecalho.php'; ?>
 
     <!-- Aqui acaba a div do cabeçalho -->
 
@@ -29,7 +27,7 @@
 
         <!-- Aqui começa a div da barra lateral -->
 
-        <?php include 'componentes/sidebar.php'; ?>
+        <?php include __DIR__ . '/componentes/sidebar.php'; ?>
 
         <!-- Aqui acaba a div da barra lateral -->
 

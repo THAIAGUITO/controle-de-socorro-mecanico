@@ -440,11 +440,11 @@ main {
     padding: 15px 15px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     transition: .15s;
+    cursor: pointer;
 }
 
 .chamados:hover{
     background: #1c2720;
-    cursor: pointer;
     transform: scale(1.05);
 }
 

@@ -1,5 +1,6 @@
 const inputs_inf_veiculo = [...document.querySelectorAll('.input_inf')]
 const btn_salvar_chamado = document.getElementById('salvar_chamado')
+const equipe = [...document.querySelectorAll('.equipe_item')]
 
 function verificar_preenchimento() {
     inputs_inf_veiculo.forEach((el) => {
@@ -44,3 +45,40 @@ inputs_inf_veiculo.forEach((el) => {
     })
 
 })
+
+const btn_urgente = document.getElementById('btn_urgente')
+const btn_normal = document.getElementById('btn_normal')
+const btn_aguardando = document.getElementById('btn_aguardando')
+
+btn_urgente.addEventListener('click', () => {
+    btn_urgente.classList.add('urgente')
+    btn_normal.classList.remove('normal')
+    btn_aguardando.classList.remove('aguardando')
+})
+
+btn_normal.addEventListener('click', () => {
+    btn_urgente.classList.remove('urgente')
+    btn_normal.classList.add('normal')
+    btn_aguardando.classList.remove('aguardando')
+})
+
+btn_aguardando.addEventListener('click', () => {
+    btn_urgente.classList.remove('urgente')
+    btn_normal.classList.remove('normal')
+    btn_aguardando.classList.add('aguardando')
+})
+
+equipe.forEach((el) => {
+    el.addEventListener('click', (evt) => {
+        const item = evt.target.closest('.equipe_item')
+
+        equipe.forEach(e => {
+            e.classList.remove('equipe_selecionado')
+        })
+
+        item.classList.add('equipe_selecionado')
+    })
+})
+
+console.log(equipe)
+

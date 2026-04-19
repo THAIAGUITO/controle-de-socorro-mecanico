@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
     <link rel="stylesheet" href="../estilos/novo_chamado.css">
-
-    <?php $base_url = '../'; ?>
 </head>
 
 <body>
@@ -126,9 +124,9 @@
                             <div class="campo">
                                 <label>Prioridade</label>
                                 <div class="botoes_prioridade">
-                                    <button class="botao_prioridade urgente">🔴 URGENTE</button>
-                                    <button class="botao_prioridade baixa">🟢 NORMAL</button>
-                                    <button class="botao_prioridade media">🟡 AGUARDANDO</button>
+                                    <button id="btn_urgente" class="botao_prioridade">🔴 URGENTE</button>
+                                    <button id="btn_normal" class="botao_prioridade">🟢 NORMAL</button>
+                                    <button id="btn_aguardando" class="botao_prioridade">🟡 AGUARDANDO</button>
                                 </div>
                             </div>
                         </div>
@@ -156,7 +154,7 @@
                                 <label>Endereço</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
-                                    <input type="text" placeholder="Rua, Avenida, Rodovia...">
+                                    <input type="text" class="input_inf" placeholder="Rua, Avenida, Rodovia...">
                                 </div>
                             </div>
 
@@ -164,7 +162,7 @@
                                 <label>NÚmero / KM</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
-                                    <input type="text" placeholder="Rua, Avenida, Rodovia...">
+                                    <input type="text" class="input_inf" placeholder="Rua, Avenida, Rodovia...">
                                 </div>
                             </div>
                         </div>
@@ -174,7 +172,7 @@
                                 <label>Bairro</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
-                                    <input type="text" placeholder="Bairro">
+                                    <input type="text" class="input_inf" placeholder="Bairro">
                                 </div>
                             </div>
 
@@ -182,7 +180,7 @@
                                 <label>Cidade</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
-                                    <input type="text" placeholder="Cidade">
+                                    <input type="text" class="input_inf" placeholder="Cidade">
                                 </div>
                             </div>
 
@@ -190,7 +188,7 @@
                                 <label>CEP</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
-                                    <input type="text" placeholder="00000-000">
+                                    <input type="text" class="input_inf" placeholder="00000-000">
                                 </div>
                             </div>
                         </div>
@@ -262,7 +260,7 @@
                             <i class="fa-solid fa-users" style="color: #4ade7b; font-size: 13px;"></i>
                             <p>Atribuir Equipe</p>
                         </div>
-                        <div class="equipe_item selected">
+                        <div class="equipe_item">
                             <div class="avatar" style="background:#1a7a4a;">JO</div>
                             <div>
                                 <div class="nome_funcionario">João Silva</div>

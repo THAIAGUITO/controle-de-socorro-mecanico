@@ -209,11 +209,17 @@ main {
     background: none;
     border: none;
     outline: none;
-    color: #e2ebe4;
+    color: #fff;
     font-family: 'DM Sans', sans-serif;
     font-size: 13px;
     width: 100%;
 }
+
+.input_tipo_problema select option {
+    color: black;
+    font-size: 14px;
+}
+
 
 .botoes_prioridade {
     display: flex;
@@ -235,10 +241,22 @@ main {
     font-family: 'DM Sans', sans-serif;
 }
 
-.botao_prioridade.urgente {
+.urgente {
     background: rgba(242, 92, 84, .15);
     border-color: #f25c54;
     color: #f25c54;
+}
+
+.normal {
+    background: rgba(26, 138, 54, .15);
+    border-color: #1a8a36;
+    color: #1a8a36;
+}
+
+.aguardando {
+    background: rgba(245, 200, 66, .15);
+    border-color: #f5c842;
+    color: #f5c842;
 }
 
 .caixa_descricao {
@@ -259,6 +277,7 @@ main {
     outline: none;
     resize: none;
     height: 80px;
+    color: #e2ebe4;
 }
 
 .caixa_descricao textarea::placeholder{
@@ -360,11 +379,6 @@ main {
     border-bottom: none;
 }
 
-.equipe_item.selected {
-    border-color: #1a8a36;
-    background: rgba(26, 138, 54, .08);
-}
-
 .equipe_item {
     display: flex;
     align-items: center;
@@ -375,6 +389,12 @@ main {
     margin-bottom: 8px;
     cursor: pointer;
     border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.equipe_selecionado {
+    border-color: #1a8a36;
+    background: rgba(26, 138, 54, .08);
+    transform: scale(1.05);
 }
 
 .avatar {
