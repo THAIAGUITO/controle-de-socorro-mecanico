@@ -79,7 +79,7 @@
                                     <label for="nome_solicitante">Nome do Solicitante</label>
                                     <div class="caixa_input">
                                         <i class="fa-solid fa-user"></i>
-                                        <input id="nome_solicitante" class="input_inf" type="text" placeholder="Nome Completo">
+                                        <input id="nome" class="input_inf" type="text" placeholder="Nome Completo">
                                     </div>
                                 </div>
 
@@ -237,7 +237,7 @@
 
                         <div class="resumo_item">
                             <span class="resumo_label">Prioridade</span>
-                            <span class="resumo_valor" id="inf_prioridade" style="color: #f25c54;">URGENTE</span>
+                            <span class="resumo_valor" id="inf_prioridade"></span>
                         </div>
 
                         <div class="resumo_item">
@@ -331,8 +331,8 @@
     </div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="../scripts/mapa_chamado.js"></script>
-<script src="../scripts/novo_chamado.js"></script>
+<script src="../scripts/mapa_chamado.js" defer></script>
+<script src="../scripts/novo_chamado.js" defer></script>
 </body>
 
 </html>
