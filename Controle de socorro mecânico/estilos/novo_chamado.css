@@ -7,10 +7,10 @@
 }
 
 body {
-    display: flex;
     background: #0b0f0d;
     font-family: 'DM Sans', sans-serif;
     min-height: 100vh;
+    color: white;
 }
 
 main {
@@ -20,19 +20,6 @@ main {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.conteudo_formulário {
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    gap: 20px;
-    flex: 1;
-}
-
-.conteudo_esquerda {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
 }
 
 .topo_conteudo {
@@ -92,6 +79,20 @@ main {
     font-weight: 600;
     cursor: pointer;
 }
+
+.conteudo_formulário {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 20px;
+    flex: 1;
+}
+
+.conteudo_esquerda {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
 
 .caixa_formulario {
     background: #161e18;
@@ -175,7 +176,6 @@ main {
     border-color: #f25c54;
     box-shadow: 0 0 0 3px rgba(242, 92, 84, 0.12);
 }
-
 
 .topo_forms_tipo_problema {
     display: flex;

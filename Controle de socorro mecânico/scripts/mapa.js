@@ -1,3 +1,5 @@
+//Mapa eu ainda não sei utilizar não, coloquei com IA apenas para não ficar sem nada
+
 var mapa = L.map('mapa').setView([-23.0068, -45.5480], 13);
 
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

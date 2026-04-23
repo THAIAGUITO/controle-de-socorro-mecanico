@@ -41,9 +41,12 @@ btn_salvar_chamado.addEventListener('click', () => {
     const inf_nome = document.getElementById('nome').value
     const inf_telefone = document.getElementById('telefone').value
     const problema = [...document.querySelectorAll('select option')].find(el => el.selected).textContent
+    const inf_endereco = document.getElementById('endereco').value
+    const inf_numero_endereco = document.getElementById('numero_endereco').value
 
     document.getElementById('inf_placa').innerHTML = inf_placa
     document.getElementById('inf_problema').innerHTML = problema
+    document.getElementById('inf_endereco').innerHTML = inf_endereco + ", " + inf_numero_endereco
 
     console.log("A placa é" + inf_placa + ", o nome é" + inf_nome + ", o modelo é" + inf_modelo + ", o telefone é" + inf_telefone)
     console.log("Prioridade:", divPrioridade.textContent)

@@ -1,3 +1,5 @@
+//Mapa eu ainda não sei utilizar não, coloquei com IA apenas para não ficar sem nada
+
 document.addEventListener('DOMContentLoaded', function () {
 
     const mapa = L.map('mapa', {
