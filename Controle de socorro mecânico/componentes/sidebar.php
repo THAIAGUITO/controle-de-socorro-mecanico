@@ -1,3 +1,8 @@
+ <?php
+// Define base_url dinamicamente baseado no nível da página atual
+$base_url = str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2);
+?>
+ 
  <link rel="stylesheet" href="<?php echo str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2); ?>estilos/style.css">
  
  <div class="sidebar">
@@ -13,7 +18,7 @@
                     <p>GESTÃO</p>
                 </li>
                 <li><a href="#"><i class="fa-solid fa-truck"></i> Veiculos</a></li>
-                <li><a href="#"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
+                <li><a href="<?php echo $base_url; ?>telas/cadastro_funcionario.php"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
                 <li><a href="#"><i class="fa-solid fa-chart-column"></i> Relatórios</a></li>
                 <hr>
                 <li>

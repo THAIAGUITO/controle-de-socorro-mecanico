@@ -154,7 +154,7 @@
                                 <label>Endereço</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
-                                    <input type="text" class="input_inf" placeholder="Rua, Avenida, Rodovia...">
+                                    <input type="text" class="input_inf" id="endereco" placeholder="Rua, Avenida, Rodovia...">
                                 </div>
                             </div>
 
@@ -162,7 +162,7 @@
                                 <label>NÚmero / KM</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-road"></i>
-                                    <input type="text" class="input_inf" placeholder="Rua, Avenida, Rodovia...">
+                                    <input type="text" class="input_inf" id="numero_endereco" placeholder="Rua, Avenida, Rodovia...">
                                 </div>
                             </div>
                         </div>
