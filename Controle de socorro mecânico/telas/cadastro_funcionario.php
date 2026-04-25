@@ -308,8 +308,51 @@
                             <p>Informações</p>
                         </div>
 
-                        <div class="teste">
-                            novo
+                        <div class="informacoes" style="margin-bottom: 12px;">
+                            <i class="fa-solid fa-envelope"></i>
+                            <p>O funcionário receberá um e-mail com as credenciais de acesso assim que o cadastro for concluído.</p>
+                        </div>
+
+                        <div class="informacoes" style="margin-bottom: 12px;">
+                            <i class="fa-solid fa-key"></i>
+                            <p>A senha provisória deverá ser alterada no primeiro acesso ao sistema.</p>
+                        </div>
+
+                        <div class="informacoes">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <p>As permissões podem ser alteradas a qualquer momento pelo administrador na aba de configurações.</p>
+                        </div>
+                    </div>
+
+                    <div class="caixa_formulario">
+                        <div class="topo_formulario">
+                            <i class="fa-solid fa-clipboard-check" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Checklist</p>
+                        </div>
+
+                        <div class="checklist_item">
+                            <div class="checklist_inf">
+                                <p>Dados pessoais</p>
+                            </div>
+                            <i class="fa-solid fa-circle-check" style="color: #4ade7b; font-size:16px;"></i>
+                        </div>
+                        <div class="checklist_item">
+                            <div class="checklist_inf">
+                                <p>Dados profissionais</p>
+                            </div>
+                            <i class="fa-solid fa-circle-check" style="color: #4ade7b; font-size:16px;"></i>
+                        </div>
+                        <div class="checklist_item">
+                            <div class="checklist_inf">
+                                <p>Credenciais de acesso</p>
+                            </div>
+                            <i class="fa-regular fa-circle" style="color: #5a7460; font-size:16px;"></i>
+                        </div>
+                        <div class="checklist_item">
+                            <div class="checklist_inf">
+                                <p>Foto de perfil</p>
+                            </div>
+                            <i class="fa-regular fa-circle" style="color: #5a7460; font-size:16px;"></i>
                         </div>
                     </div>
                 </div>
