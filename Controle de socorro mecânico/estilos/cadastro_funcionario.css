@@ -372,3 +372,78 @@ main {
     flex-direction: column;
     gap: 16px;
 }
+
+.visualizacao_funcionario {
+    background: #111712;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.visualizacao_avatar{
+    width: 64px;
+    height: 64px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #1a7a4a, #1a8a36);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin: 0 auto 12px;
+}
+
+.visualizacao_nome{
+    font-family: 'Syne', sans-serif;;
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.visualizacao_cargo{
+    font-size: 12px;
+    color: #7a9880;
+    margin-bottom: 12px;
+}
+
+.visualizacao_atividade{
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(74, 222, 123, .1);
+    border: 1px solid rgba(74, 222, 123, .2);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 11px;
+    color: #4ade7b;
+    font-weight: 600;
+}
+
+.bolinha_atividade{
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #4ade7b;
+}
+
+.resumo_inf{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 9px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+}
+
+.resumo_inf_label{
+    color: #7a9880;
+}
+
+.resumo_inf_valor{
+    color: var(--texto);
+    font-weight: 500;
+}

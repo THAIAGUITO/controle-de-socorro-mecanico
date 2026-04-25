@@ -46,7 +46,7 @@
             <div class="conteudo_formulario">
 
                 <!-- Conteudo do formulário central -->
-                 
+
                 <div class="conteudo_central">
                     <div class="caixa_formulario">
                         <div class="topo_formulario">
@@ -259,20 +259,61 @@
                             </div>
                         </div>
                     </div>
-                    
+
                 </div>
 
                 <!-- Termino do conteudo do formulário central -->
 
                 <div class="conteudo_lateral">
+                    <div class="caixa_formulario">
+                        <div class="topo_formulario">
+                            <i class="fa-solid fa-eye" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Pré Visualização</p>
+                        </div>
 
+                        <div class="visualizacao_funcionario">
+                            <div class="visualizacao_avatar">JS</div>
+                            <div class="visualizacao_nome">João Silva</div>
+                            <div class="visualizacao_cargo">Mecânico : Turno Manhã</div>
+                            <span class="visualizacao_atividade">
+                                <span class="bolinha_atividade"></span>
+                                Ativo
+                            </span>
+                        </div>
+                        <div class="resumo_inf">
+                            <span class="resumo_inf_label">Matrícula</span>
+                            <span class="resumo_valor_label">EQ-001</span>
+                        </div>
+                        <div class="resumo_inf">
+                            <span class="resumo_inf_label">Telefone</span>
+                            <span class="resumo_valor_label">(12) 99999-9999</span>
+                        </div>
+                        <div class="resumo_inf">
+                            <span class="resumo_inf_label">Região</span>
+                            <span class="resumo_valor_label">Zona Norte</span>
+                        </div>
+                        <div class="resumo_inf">
+                            <span class="resumo_inf_label">Acesso</span>
+                            <span class="resumo_valor_label">Técnico</span>
+                        </div>
+                        <div class="resumo_inf">
+                            <span class="resumo_inf_label">Status</span>
+                            <span class="resumo_valor_label" style="color: #f5c842;">Aguardando Cadastro</span>
+                        </div>
+                    </div>
+
+                    <div class="caixa_formulario">
+                        <div class="topo_formulario">
+                            <i class="fa-solid fa-circle-info" style="color: #4ade7b; font-size: 13px;"></i>
+                            <p>Informações</p>
+                        </div>
+
+                        <div class="teste">
+                            novo
+                        </div>
+                    </div>
                 </div>
             </div>
-
-
-
-
-
         </main>
     </div>
 
