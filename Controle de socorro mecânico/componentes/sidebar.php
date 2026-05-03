@@ -1,9 +1,9 @@
- <?php
-// Define base_url dinamicamente baseado no nível da página atual
-$base_url = str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2);
+<?php
+$nivel = max(0, substr_count($_SERVER['PHP_SELF'], '/') - 2);
+$base_url = str_repeat('../', $nivel);
 ?>
  
- <link rel="stylesheet" href="<?php echo str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2); ?>estilos/style.css">
+ <link rel="stylesheet" href="<?php echo $base_url; ?>estilos/style.css">
  
  <div class="sidebar">
             <ul>

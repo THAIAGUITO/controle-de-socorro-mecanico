@@ -13,6 +13,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <link rel="stylesheet" href="../estilos/cadastro_funcionario.css">
+    <link rel="stylesheet" href="../estilos/style.css">
 </head>
 
 <body>

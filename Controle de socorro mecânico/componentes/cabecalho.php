@@ -1,9 +1,9 @@
 <?php
-// Define base_url dinamicamente baseado no nível da página atual
-$base_url = str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2);
+$nivel = max(0, substr_count($_SERVER['PHP_SELF'], '/') - 1);
+$base_url = str_repeat('../', $nivel);
 ?>
 
-<link rel="stylesheet" href="<?php echo str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2); ?>estilos/style.css">
+<link rel="stylesheet" href="<?php echo $base_url; ?>estilos/style.css">
 
 <header class="cabecalho">
     <div class="esquerda_cabecalho">
@@ -16,7 +16,7 @@ $base_url = str_repeat('../', substr_count($_SERVER['PHP_SELF'], '/') - 2);
         <div class="search_box">
             <i class="fa-solid fa-magnifying-glass"></i>
             <input type="text" id="pesquisa" placeholder="Buscar chamado, placa, endereço...">
-        </div>
+        </div> 
     </div>
 
     <div class="direita_cabecalho">
