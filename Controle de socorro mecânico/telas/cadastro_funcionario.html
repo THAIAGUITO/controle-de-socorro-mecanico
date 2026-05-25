@@ -1,31 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CADASTRO DE FUNCIONÁRIO</title>
 
+    <link rel="stylesheet" href="../estilos/cadastro_funcionario.css">
+    <link rel="stylesheet" href="../estilos/style.css">
+    <link rel="stylesheet" href="../estilos/loader.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-    <link rel="stylesheet" href="../estilos/cadastro_funcionario.css">
-    <link rel="stylesheet" href="../estilos/style.css">
 </head>
 
 <body>
-    <?php include __DIR__ . '/../componentes/cabecalho.php'; ?>
+    <div id="tela_loader">
+        <div class="loader">
+            <span></span>
+        </div>
+    </div>
+
+    <!-- Aqui começa a div do cabeçalho -->
+
+    <div id="header-site"></div>
+
+    <!-- Aqui acaba a div do cabeçalho -->
 
     <div class="pagina">
-        <?php include __DIR__ . '/../componentes/sidebar.php'; ?>
+
+        <!-- Aqui começa a div da barra lateral -->
+
+        <div id="sidebar-site"></div>
+
+        <!-- Aqui acaba a div da barra lateral -->
 
         <main>
             <div class="topo_conteudo">
                 <div class="esquerda_topo">
-                    <a href="../index.php">
+                    <a href="../index.html">
                         <button class="voltar">
                             <i class="fa-solid fa-arrow-left"></i>
                             voltar
@@ -107,8 +123,7 @@
                                 <label for="telefone">Telefone</label>
                                 <div class="caixa_input">
                                     <i class="fa-solid fa-phone"></i>
-                                    <input id="telefone" class="input_inf" type="number"
-                                        placeholder="(12) 99999-9999">
+                                    <input id="telefone" class="input_inf" type="number" placeholder="(12) 99999-9999">
                                 </div>
                             </div>
 
@@ -311,7 +326,8 @@
 
                         <div class="informacoes" style="margin-bottom: 12px;">
                             <i class="fa-solid fa-envelope"></i>
-                            <p>O funcionário receberá um e-mail com as credenciais de acesso assim que o cadastro for concluído.</p>
+                            <p>O funcionário receberá um e-mail com as credenciais de acesso assim que o cadastro for
+                                concluído.</p>
                         </div>
 
                         <div class="informacoes" style="margin-bottom: 12px;">
@@ -321,7 +337,8 @@
 
                         <div class="informacoes">
                             <i class="fa-solid fa-shield-halved"></i>
-                            <p>As permissões podem ser alteradas a qualquer momento pelo administrador na aba de configurações.</p>
+                            <p>As permissões podem ser alteradas a qualquer momento pelo administrador na aba de
+                                configurações.</p>
                         </div>
                     </div>
 
@@ -363,6 +380,8 @@
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="../scripts/cadastro_funcionario.js"></script>
+    <script src="../scripts/loader.js"></script>
+    <script src="../scripts/componentes.js"></script>
 </body>
 
 </html>
