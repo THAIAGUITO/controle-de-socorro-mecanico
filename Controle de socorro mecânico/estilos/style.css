@@ -31,6 +31,7 @@ main {
     display: flex;
     gap: 16px;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .linha_cards {
@@ -439,6 +440,3 @@ main {
     font-weight: 500;
     padding-left: 10px;
 }
-
-
-

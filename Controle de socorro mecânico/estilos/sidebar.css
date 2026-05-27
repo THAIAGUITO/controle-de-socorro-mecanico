@@ -1,21 +1,25 @@
 .sidebar ul {
     list-style: none;
-    margin-top: 10px;
 }
 
 .sidebar {
     background: #111712;
     width: 230px;
     height: 100vh;
-    padding: 20px;
+    padding: 16px 10px;
     border-right: solid 1px rgba(255, 255, 255, 0.06);
+    width: 210px;
+    min-width: 210px;
 }
 
 .sidebar p {
     color: #5a7460;
-    font-size: 12px;
-    margin-bottom: 10px;
-    padding-bottom: 5px;
+    font-size: 10px;
+    padding: 14px 10px 6px;
+    letter-spacing: 1.8px;
+    font-family: 'DM Sans', sans-serif;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 .sidebar hr {
@@ -30,16 +34,25 @@
     gap: 10px;
     color: #7a9880;
     text-decoration: none;
-    margin-bottom: 5px;
     font-size: 14px;
     padding: 10px 12px;
-    border-radius: 8px;
+    font-size: 13.5px;
 }
 
 .sidebar a:hover {
-    color: rgba(255, 255, 255, 0.822);
-    border-color: rgba(255, 255, 255, 0.15);
-    background: #161e18;
+    color: #4ade7b;
+    background: rgba(26, 138, 54, .18);
     cursor: pointer;
     transition: all 0.5s ease;
+    font-weight: 500;
+    transform: scale(1.05);
+    border-radius: 8px;
+}
+
+.selecionado_sidebar{
+    color: #4ade7b !important;
+    background: rgba(26, 138, 54, .18);
+    font-weight: 500;
+    transform: scale(1.05);
+    border-radius: 8px;
 }

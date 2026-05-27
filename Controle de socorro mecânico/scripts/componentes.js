@@ -1,15 +1,12 @@
 function getBasePath() {
     const path = window.location.pathname;
-
-    // Divide o caminho em partes e remove o nome do arquivo
-    const partes = path.split('/');
+    
+    const partes = path.split('/'); // Divide o caminho em partes separando por /
     partes.pop(); // remove o arquivo (ex: index.html)
 
-    // Verifica se está dentro de alguma subpasta do projeto
-    // Ajuste '/telas' para o nome real da sua pasta raiz do projeto
-    const indicadorRaiz = partes.findIndex(p => p === 'telas');
+    const indicadorRaiz = partes.findIndex(p => p === 'telas'); // Verifica onde está a pasta 'telas' no caminho se não encontrar, retorna -1
 
-    if (indicadorRaiz === -1) {
+    if (indicadorRaiz === -1) { // Compara se o valor é -1, ou seja, se não encontrou a pasta 'telas'
         return ''; // já está na raiz
     }
 
@@ -18,6 +15,17 @@ function getBasePath() {
     return '../'.repeat(niveis);
 }
 
+function marcarLinkAtivo() {
+    const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
+
+    const links = document.querySelectorAll('.sidebar a');
+    links.forEach(link => {
+        const hrefDoLink = link.getAttribute('href').split('/').pop();
+        if (hrefDoLink === paginaAtual) {
+            link.classList.add('selecionado_sidebar');
+        }
+    });
+}
 
 const head = document.head
 const body = document.body
@@ -35,14 +43,14 @@ const componentes = {
         <div id="cabecalho">
             <header>
                 <div class="logo">
-                     <img src="${base}imagens/logo.svg" alt="Logo da empresa">
+                     <img src="${base}imagens/logo.png" alt="Logo da empresa">
                 </div>
                 <div class="search_box">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     <input type="text" id="pesquisa" placeholder="Buscar chamado, placa, endereço...">
                 </div>
                 <div class="icones_cabecalho">
-                    <a href="telas/login.html">
+                    <a href="${base}telas/login.html">
                         <div class="usuario">
                             <i class="fa-solid fa-user"></i>
                         </div>
@@ -81,4 +89,6 @@ const componentes = {
 window.addEventListener('DOMContentLoaded', () => {
     document.getElementById('header-site').innerHTML = componentes.cabecalho;
     document.getElementById('sidebar-site').innerHTML = componentes.sidebar;
+
+    marcarLinkAtivo();
 });

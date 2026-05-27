@@ -4,25 +4,24 @@ header {
     align-items: center;
     padding: 8px 20px;
     border-bottom: solid 1px rgba(255, 255, 255, 0.06);
+    justify-content: space-between;
+    max-height: 58px;
 }
 
 .logo img {
-    justify-content: space-between;
-    padding-right: 0%;
-    height: 50px;
-    border-right: 650px solid transparent;
+    width: 220px;
+    height: 200px
 }
 
 .search_box {
     display: flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(255, 255, 255, 0.06);
+    background-color: #161e18;
     border-radius: 8px;
     padding: 10px 14px;
-    width: 300px;
-    margin-right: 33%;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 280px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
 }
 
 .search_box .fa-magnifying-glass {
