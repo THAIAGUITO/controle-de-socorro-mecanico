@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../estilos/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="../estilos/loader.css">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css">
 
 </head>
 
@@ -79,11 +79,11 @@
             </div>
         </div>
 
-        <div class="caixa_de_email">
-            <label>E-mail</label>
-            <div class="caixa_de_colocar_email">
-                <i class="fa-solid fa-envelope"></i><input type="email" id="email_user" name="E-mail"
-                    placeholder="seu@email.com">
+        <div class="caixa_de_usuario">
+            <label>Usuário</label>
+            <div class="caixa_de_colocar_usuario">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="usuario" name="Usuário" placeholder="Seu Usuário">
             </div>
         </div>
 
@@ -137,6 +137,7 @@
             <a href="">Solicitar ao administrador</a>
         </div>
 
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script src="../scripts/loader.js"></script>
         <script src="../scripts/login.js"></script>
 </body>
