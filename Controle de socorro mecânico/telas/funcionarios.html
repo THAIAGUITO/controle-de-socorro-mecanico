@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADASTRO DE FUNCIONÁRIO</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <link rel="stylesheet" href="../estilos/funcionarios.css">
+    <link rel="stylesheet" href="../estilos/style.css">
+    <link rel="stylesheet" href="../estilos/loader.css">
+</head>
+<body>
+    <div id="tela_loader">
+      <div class="loader">
+        <span></span>
+      </div>
+    </div>
+
+    <div id="header-site"></div>
+
+    <div class="pagina">
+        
+      <div id="sidebar-site"></div>
+
+      <main>
+         <div class="topo_conteudo">
+          <div class="esquerda_topo">
+            <a href="../index.html">
+              <button class="voltar">
+                <i class="fa-solid fa-arrow-left"></i>
+                voltar
+              </button>
+            </a>
+
+            <div class="texto_topo_conteudo">
+              <div class="titulo_topo">Funcionário</div>
+              <div class="descricao_topo">
+                Gerencie os funcionários cadastrados no sistema
+              </div>
+            </div>
+          </div>
+
+          <a href="cadastro_funcionario.html">
+            <button id="cadastrar_funcionario">
+              <i class="fa-solid fa-plus"></i>
+              Cadastrar Funcionário
+            </button>
+          </a>
+        </div>
+
+        <div class="status">
+            <div class="item_status">
+                <div class="topo_item_status">
+                    <div class="texto_status">Total de funcionários</div>
+                    <div class = "icone_status" style="background: rgba(91, 156, 246, 0.12);"><i class="fa-solid fa-users-line" style="color: #5b9cf6;"></i></div>
+                </div>
+                <div class="numero_status">15</div>
+            </div>
+
+            <div class="item_status">
+                <div class="topo_item_status">
+                    <div class="texto_status">Ativos</div>
+                    <div class = "icone_status" style="background: rgba(34, 197, 150, 0.12);"><i class="fa-solid fa-check" style="color: #22c596; font-size: 20px;"></i></div>
+                </div>
+                <div class="numero_status">9</div>
+            </div>
+
+            <div class="item_status">
+                <div class="topo_item_status">
+                    <div class="texto_status">Aguardando Cadastro</div>
+                    <div class = "icone_status" style="background: rgba(245, 158, 11, 0.12);"><i class="fa-solid fa-user-clock" style="color: #f59e0b;"></i></div>
+                </div>
+                <div class="numero_status">2</div>
+            </div>
+
+            <div class="item_status">
+                <div class="topo_item_status">
+                    <div class="texto_status">Inativos</div>
+                    <div class = "icone_status" style="background: rgba(236, 70, 70, 0.12);"><i class="fa-solid fa-user-slash" style="color: #ec4646;"></i></div>
+                </div>
+                <div class="numero_status">4</div>
+            </div>
+        </div>
+
+        <div class="area_tabela">
+            <div class="topo_tabela">
+                <input type="text" id="buscar_funcionario" placeholder="Buscar funcionário">
+            </div>
+
+            <select id="cargo_funcionario">
+                <option value="">Cargo</option>
+                <option value="mecanico">Mecânico</option>
+                <option value="atendente">Atendente</option>
+                <option value="administrativo">Administrativo</option>
+            </select>
+
+            <select id="regiao_funcionario">
+                <option value="">Região</option>
+                <option value="norte">Norte</option>
+                <option value="sul">Sul</option>
+                <option value="leste">Leste</option>
+                <option value="oeste">Oeste</option>
+            </select>
+
+            <select id="status_funcionario">
+                <option value="">Status</option>
+                <option value="ativo">Ativo</option>
+                <option value="aguardando_cadastro">Aguardando Cadastro</option>
+                <option value="inativo">Inativo</option>
+            </select>
+
+            <select id="turno_funcionario">
+                <option value="">Turno</option>
+                <option value="manha">Manhã</option>
+                <option value="tarde">Tarde</option>
+                <option value="noite">Noite</option>
+            </select>
+            </select>
+        </div>
+      </main>
+        
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../scripts/componentes.js"></script>
+    <script src="../scripts/loader.js"></script>
+</body>
+</html>

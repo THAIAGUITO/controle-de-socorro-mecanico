@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
@@ -13,6 +12,8 @@ html {
 body {
     font-family: 'DM Sans', sans-serif;
     background: #0b0f0d;
+    min-height: 100vh;
+    color: white;
 }
 
 a {
@@ -20,7 +21,7 @@ a {
 }
 
 .pagina {
-    display: flex;
+    display: flex; 
     height: calc(100vh - 58px);
 }
 
@@ -32,6 +33,10 @@ main {
     gap: 16px;
     flex-direction: column;
     overflow: hidden;
+}
+
+main::-webkit-scrollbar {
+  display: none;
 }
 
 .linha_cards {
