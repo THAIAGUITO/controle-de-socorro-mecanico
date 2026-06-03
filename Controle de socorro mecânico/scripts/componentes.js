@@ -76,7 +76,7 @@ const componentes = {
                 <hr>
                 <li><p>GESTÃO</p></li>
                 <li><a href="#"><i class="fa-solid fa-truck"></i> Veiculos</a></li>
-                <li><a href="${base}telas/cadastro_funcionario.html"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
+                <li><a href="${base}telas/tabela_funcionarios.html"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
                 <li><a href="#"><i class="fa-solid fa-chart-column"></i> Relatórios</a></li>
                 <hr>
                 <li><p>SISTEMA</p></li>
