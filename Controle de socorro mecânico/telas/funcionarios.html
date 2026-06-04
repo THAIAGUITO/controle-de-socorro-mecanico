@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-    <link rel="stylesheet" href="../estilos/funcionarios.css" />
+    <link rel="stylesheet" href="../estilos/funcionario.css" />
     <link rel="stylesheet" href="../estilos/style.css" />
     <link rel="stylesheet" href="../estilos/loader.css" />
   </head>
@@ -36,13 +36,11 @@
                 voltar
               </button>
             </a>
-
             <div class="texto_topo_conteudo">
               <div class="titulo_topo">Funcionário</div>
               <div class="descricao_topo">Gerencie os funcionários cadastrados no sistema</div>
             </div>
           </div>
-
           <a href="cadastro_funcionario.html">
             <button id="cadastrar_funcionario">
               <i class="fa-solid fa-plus"></i>
@@ -51,6 +49,7 @@
           </a>
         </div>
 
+        <!-- STATUS CARDS -->
         <div class="status">
           <div class="item_status">
             <div class="topo_item_status">
@@ -61,17 +60,15 @@
             </div>
             <div class="numero_status">15</div>
           </div>
-
           <div class="item_status">
             <div class="topo_item_status">
               <div class="texto_status">Ativos</div>
               <div class="icone_status" style="background: rgba(34, 197, 150, 0.12)">
-                <i class="fa-solid fa-check" style="color: #22c596; font-size: 20px"></i>
+                <i class="fa-solid fa-check" style="color: #22c596; font-size: 18px"></i>
               </div>
             </div>
             <div class="numero_status">9</div>
           </div>
-
           <div class="item_status">
             <div class="topo_item_status">
               <div class="texto_status">Aguardando Cadastro</div>
@@ -81,7 +78,6 @@
             </div>
             <div class="numero_status">2</div>
           </div>
-
           <div class="item_status">
             <div class="topo_item_status">
               <div class="texto_status">Inativos</div>
@@ -93,22 +89,21 @@
           </div>
         </div>
 
+        <!-- ÁREA TABELA -->
         <div class="area_tabela">
           <div class="topo_tabela">
             <div class="caixa_busca">
               <i class="fa-solid fa-magnifying-glass"></i>
               <input type="text" id="buscar_funcionario" placeholder="Buscar funcionário" />
             </div>
-
             <div class="caixa_filtros">
               <select id="cargo_funcionario">
-                <option value disabled selected>Cargo</option>
+                <option value="">Cargo</option>
                 <option value="mecanico">Mecânico</option>
                 <option value="atendente">Atendente</option>
                 <option value="administrativo">Administrativo</option>
               </select>
             </div>
-
             <div class="caixa_filtros">
               <select id="regiao_funcionario">
                 <option value="">Região</option>
@@ -118,7 +113,6 @@
                 <option value="oeste">Oeste</option>
               </select>
             </div>
-
             <div class="caixa_filtros">
               <select id="status_funcionario">
                 <option value="">Status</option>
@@ -127,7 +121,6 @@
                 <option value="inativo">Inativo</option>
               </select>
             </div>
-
             <div class="caixa_filtros">
               <select id="turno_funcionario">
                 <option value="">Turno</option>
@@ -137,7 +130,9 @@
               </select>
             </div>
           </div>
+
           <div class="tabela_funcionarios">
+            <!-- Cabeçalho -->
             <div class="cabecalho_tabela">
               <div class="texto_cabecalho">Funcionários</div>
               <div class="texto_cabecalho">Matrícula</div>
@@ -147,12 +142,20 @@
               <div class="texto_cabecalho">Status</div>
               <div class="texto_cabecalho">Ações</div>
             </div>
+
+            <!-- Linhas injetadas via JS -->
+            <div id="tbody_funcionarios"></div>
+            <div class="empty-state" id="empty_state">
+              <i class="fa-solid fa-user-slash"></i>
+              <p>Nenhum funcionário encontrado</p>
+            </div>
           </div>
         </div>
       </main>
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="../scripts/funcionarios.js"></script>
     <script src="../scripts/componentes.js"></script>
     <script src="../scripts/loader.js"></script>
   </body>

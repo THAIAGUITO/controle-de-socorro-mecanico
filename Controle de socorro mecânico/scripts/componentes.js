@@ -1,45 +1,45 @@
 function getBasePath() {
-    const path = window.location.pathname;
-    
-    const partes = path.split('/'); // Divide o caminho em partes separando por /
-    partes.pop(); // remove o arquivo (ex: index.html)
+  const path = window.location.pathname;
 
-    const indicadorRaiz = partes.findIndex(p => p === 'telas'); // Verifica onde está a pasta 'telas' no caminho se não encontrar, retorna -1
+  const partes = path.split("/"); // Divide o caminho em partes separando por /
+  partes.pop(); // remove o arquivo (ex: index.html)
 
-    if (indicadorRaiz === -1) { // Compara se o valor é -1, ou seja, se não encontrou a pasta 'telas'
-        return ''; // já está na raiz
-    }
+  const indicadorRaiz = partes.findIndex((p) => p === "telas"); // Verifica onde está a pasta 'telas' no caminho se não encontrar, retorna -1
 
-    // Conta quantos níveis abaixo da raiz está
-    const niveis = partes.length - indicadorRaiz;
-    return '../'.repeat(niveis);
+  if (indicadorRaiz === -1) {
+    // Compara se o valor é -1, ou seja, se não encontrou a pasta 'telas'
+    return ""; // já está na raiz
+  }
+
+  // Conta quantos níveis abaixo da raiz está
+  const niveis = partes.length - indicadorRaiz;
+  return "../".repeat(niveis);
 }
 
 function marcarLinkAtivo() {
-    const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
+  const paginaAtual = window.location.pathname.split("/").pop() || "index.html";
 
-    const links = document.querySelectorAll('.sidebar a');
-    links.forEach(link => {
-        const hrefDoLink = link.getAttribute('href').split('/').pop();
-        if (hrefDoLink === paginaAtual) {
-            link.classList.add('selecionado_sidebar');
-        }
-    });
+  const links = document.querySelectorAll(".sidebar a");
+  links.forEach((link) => {
+    const hrefDoLink = link.getAttribute("href").split("/").pop();
+    if (hrefDoLink === paginaAtual) {
+      link.classList.add("selecionado_sidebar");
+    }
+  });
 }
 
-const head = document.head
-const body = document.body
+const head = document.head;
+const body = document.body;
 const base = getBasePath();
 
-const estiloHeader = `<link rel='stylesheet' href='${base}estilos/header.css'>`
-head.innerHTML += estiloHeader
+const estiloHeader = `<link rel='stylesheet' href='${base}estilos/header.css'>`;
+head.innerHTML += estiloHeader;
 
-const estiloSidebar = `<link rel='stylesheet' href='${base}estilos/sidebar.css'>`
-head.innerHTML += estiloSidebar
+const estiloSidebar = `<link rel='stylesheet' href='${base}estilos/sidebar.css'>`;
+head.innerHTML += estiloSidebar;
 
 const componentes = {
-
-    cabecalho: `
+  cabecalho: `
         <div id="cabecalho">
             <header>
                 <div class="logo">
@@ -66,7 +66,7 @@ const componentes = {
         </div>
     `,
 
-    sidebar: `
+  sidebar: `
         <div class="sidebar">
             <ul>
                 <li><p>PRINCIPAL</p></li>
@@ -76,19 +76,19 @@ const componentes = {
                 <hr>
                 <li><p>GESTÃO</p></li>
                 <li><a href="#"><i class="fa-solid fa-truck"></i> Veiculos</a></li>
-                <li><a href="${base}telas/tabela_funcionarios.html"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
+                <li><a href="${base}telas/funcionarios.html"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
                 <li><a href="#"><i class="fa-solid fa-chart-column"></i> Relatórios</a></li>
                 <hr>
                 <li><p>SISTEMA</p></li>
                 <li><a href="#"><i class="fa-solid fa-gear"></i> Configurações</a></li>
             </ul>
         </div>
-    `
+    `,
 };
 
-window.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('header-site').innerHTML = componentes.cabecalho;
-    document.getElementById('sidebar-site').innerHTML = componentes.sidebar;
+window.addEventListener("DOMContentLoaded", () => {
+  document.getElementById("header-site").innerHTML = componentes.cabecalho;
+  document.getElementById("sidebar-site").innerHTML = componentes.sidebar;
 
-    marcarLinkAtivo();
+  marcarLinkAtivo();
 });
