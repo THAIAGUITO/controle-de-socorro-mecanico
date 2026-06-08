@@ -159,7 +159,7 @@
                 <div class="campo">
                   <label for="função">Cargo / Função</label>
                   <div class="linha_cargo">
-                    <button class="btn_cargo on">Mecânico</button>
+                    <button class="btn_cargo">Mecânico</button>
                     <button class="btn_cargo">Motorista</button>
                     <button class="btn_cargo">Auxiliar</button>
                     <button class="btn_cargo">Supervisor</button>
@@ -283,33 +283,25 @@
               </div>
 
               <div class="visualizacao_funcionario">
-                <div class="visualizacao_avatar">JS</div>
-                <div class="visualizacao_nome">João Silva</div>
-                <div class="visualizacao_cargo">Mecânico : Turno Manhã</div>
-                <span class="visualizacao_atividade">
-                  <span class="bolinha_atividade"></span>
-                  Ativo
-                </span>
+                <div class="visualizacao_avatar">??</div>
+                <div class="visualizacao_nome">Nome do Funcionário</div>
+                <div class="visualizacao_turno">Turno</div>
               </div>
               <div class="resumo_inf">
                 <span class="resumo_inf_label">Matrícula</span>
-                <span class="resumo_valor_label">EQ-001</span>
+                <span class="resumo_valor_label" id="inf_matricula"></span>
               </div>
               <div class="resumo_inf">
                 <span class="resumo_inf_label">Telefone</span>
-                <span class="resumo_valor_label">(12) 99999-9999</span>
+                <span class="resumo_valor_label" id="inf_telefone"></span>
               </div>
               <div class="resumo_inf">
                 <span class="resumo_inf_label">Região</span>
-                <span class="resumo_valor_label">Zona Norte</span>
+                <span class="resumo_valor_label" id="inf_regiao"></span>
               </div>
               <div class="resumo_inf">
                 <span class="resumo_inf_label">Acesso</span>
-                <span class="resumo_valor_label">Técnico</span>
-              </div>
-              <div class="resumo_inf">
-                <span class="resumo_inf_label">Status</span>
-                <span class="resumo_valor_label" style="color: #f5c842">Aguardando Cadastro</span>
+                <span class="resumo_valor_label" id="inf_acesso"></span>
               </div>
             </div>
 
@@ -345,13 +337,13 @@
                 <div class="checklist_inf">
                   <p>Dados pessoais</p>
                 </div>
-                <i class="fa-solid fa-circle-check" style="color: #4ade7b; font-size: 16px"></i>
+                <i class="fa-regular fa-circle" style="color: #5a7460; font-size: 16px"></i>
               </div>
               <div class="checklist_item">
                 <div class="checklist_inf">
                   <p>Dados profissionais</p>
                 </div>
-                <i class="fa-solid fa-circle-check" style="color: #4ade7b; font-size: 16px"></i>
+                <i class="fa-regular fa-circle" style="color: #5a7460; font-size: 16px"></i>
               </div>
               <div class="checklist_item">
                 <div class="checklist_inf">
@@ -375,5 +367,10 @@
     <script src="../scripts/cadastro_funcionario.js"></script>
     <script src="../scripts/loader.js"></script>
     <script src="../scripts/componentes.js"></script>
+    <script src="../scripts/auth.js"></script>
+    <script>
+      protegerPagina(window.location.pathname);
+      aplicarPermissoesNaTela();
+    </script>
   </body>
 </html>

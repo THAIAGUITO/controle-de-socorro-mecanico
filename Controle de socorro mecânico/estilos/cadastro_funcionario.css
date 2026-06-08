@@ -240,7 +240,7 @@ main::-webkit-scrollbar {
 }
 
 #data_nascimento {
-  color: #7a9880;
+  color: white;
 }
 
 .selecionado {
@@ -316,7 +316,7 @@ select option:disabled:checked {
 }
 
 #data_admissao {
-  color: #7a9880;
+  color: white;
 }
 
 .permissoes_especificas {
@@ -418,7 +418,7 @@ select option:disabled:checked {
   margin-bottom: 4px;
 }
 
-.visualizacao_cargo {
+.visualizacao_turno {
   font-size: 12px;
   color: #7a9880;
   margin-bottom: 12px;
@@ -533,4 +533,14 @@ select option:disabled:checked {
 .fa-regular,
 .far {
   font-weight: 400;
+}
+
+.selecionado {
+  border-color: #1a8a36;
+  box-shadow: 0 0 0 3px rgba(26, 138, 54, 0.12);
+}
+
+.falta_preencher {
+  border-color: #f25c54;
+  box-shadow: 0 0 0 3px rgba(242, 92, 84, 0.12);
 }

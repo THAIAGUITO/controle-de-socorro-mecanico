@@ -9,6 +9,7 @@ class Funcionario {
     this.email = dados.email;
     this.matricula = dados.matricula;
     this.dataAdmissao = dados.dataAdmissao;
+    this.cargo = dados.cargo;
     this.turno = dados.turno;
     this.regiao = dados.regiao;
     this.usuario = dados.usuario;
@@ -34,7 +35,6 @@ class Funcionario {
 const cadastrar = document.getElementById("salvar_cadastro");
 
 cadastrar.addEventListener("click", () => {
-  // ── Coleta os valores ──────────────────────────────────────────
   const campos = {
     nome: document.getElementById("nome").value.trim(),
     sobrenome: document.getElementById("sobrenome").value.trim(),
@@ -53,7 +53,6 @@ cadastrar.addEventListener("click", () => {
 
   const cargoSelecionado = document.querySelector(".btn_cargo.on");
 
-  // ── Validações ─────────────────────────────────────────────────
   const erros = [];
 
   if (!campos.nome) erros.push("Nome");
@@ -71,13 +70,11 @@ cadastrar.addEventListener("click", () => {
   if (campos.senha.length < 6) erros.push("Senha (mínimo 6 caracteres)");
   if (!campos.nivelAcesso) erros.push("Nível de Acesso");
 
-  // ── Se houver erros, exibe e interrompe ────────────────────────
   if (erros.length > 0) {
     alert("Preencha os campos obrigatórios antes de cadastrar:\n\n• " + erros.join("\n• "));
     return;
   }
 
-  // ── Tudo válido: cria e salva o funcionário ────────────────────
   const novoFuncionario = new Funcionario({
     foto: window.perfilFotoDataUrl || "",
     nome: campos.nome,
@@ -157,14 +154,12 @@ btnImage.addEventListener("click", function () {
   fileInput.type = "file";
   fileInput.accept = "image/jpeg, image/png";
 
-  // Aciona o seletor de arquivo
   fileInput.click();
 
   fileInput.addEventListener("change", function () {
     const arquivo = fileInput.files[0];
     if (!arquivo) return;
 
-    // Valida o tamanho (máximo 2MB)
     if (arquivo.size > 2 * 1024 * 1024) {
       alert("A imagem deve ter no máximo 2MB.");
       return;
@@ -175,17 +170,15 @@ btnImage.addEventListener("click", function () {
     reader.onload = function (e) {
       const dataUrl = e.target.result;
 
-      // Salva globalmente para uso no cadastro
       window.perfilFotoDataUrl = dataUrl;
+      atualizarChecklist();
 
-      // Atualiza o avatar no formulário
       const avatar = document.querySelector(".avatar");
       avatar.style.backgroundImage = `url(${dataUrl})`;
       avatar.style.backgroundSize = "cover";
       avatar.style.backgroundPosition = "center";
-      avatar.textContent = ""; // Remove as iniciais
+      avatar.textContent = "";
 
-      // Atualiza o avatar na pré-visualização
       const avatarPreview = document.querySelector(".visualizacao_avatar");
       avatarPreview.style.backgroundImage = `url(${dataUrl})`;
       avatarPreview.style.backgroundSize = "cover";
@@ -196,3 +189,162 @@ btnImage.addEventListener("click", function () {
     reader.readAsDataURL(arquivo);
   });
 });
+
+const inputs_inf_funcionario = [...document.querySelectorAll(".input_inf")];
+
+inputs_inf_funcionario.forEach((el) => {
+  el.addEventListener("focus", (evt) => {
+    inputs_inf_funcionario.forEach((i) => {
+      i.parentElement.classList.remove("falta_preencher");
+      i.parentElement.classList.remove("selecionado");
+    });
+    evt.target.parentElement.classList.add("selecionado");
+  });
+
+  el.addEventListener("blur", (evt) => {
+    evt.target.parentElement.classList.remove("selecionado");
+    if (evt.target.value === "") {
+      evt.target.parentElement.classList.add("falta_preencher");
+    }
+  });
+});
+
+function limparInputs() {
+  inputs_inf_funcionario.forEach((el) => {
+    el.value = "";
+    el.parentElement.classList.remove("falta_preencher", "selecionado");
+  });
+
+  equipe.forEach((el) => el.classList.remove("equipe_selecionado"));
+
+  document.getElementById("nome").textContent = "";
+  document.getElementById("sobrenome").textContent = "";
+  document.getElementById("cpf").textContent = "";
+  document.getElementById("data_nascimento").textContent = "";
+  document.getElementById("telefone").textContent = "";
+  document.getElementById("email").textContent = "";
+  document.getElementById("matricula").textContent = "";
+  document.getElementById("data_admissao").textContent = "";
+  document.getElementById("turno").textContent = "";
+  document.getElementById("regiao").textContent = "";
+  document.getElementById("usuario").textContent = "";
+  document.getElementById("senha").textContent = "";
+  document.getElementById("nivel_acesso").textContent = "";
+
+  const select = document.querySelector("select");
+  if (select) select.selectedIndex = 0;
+}
+
+document.getElementById("nome").addEventListener("input", atualizarPreview);
+document.getElementById("sobrenome").addEventListener("input", atualizarPreview);
+document.getElementById("matricula").addEventListener("input", atualizarPreview);
+document.getElementById("telefone").addEventListener("input", atualizarPreview);
+document.getElementById("turno").addEventListener("change", atualizarPreview);
+document.getElementById("regiao").addEventListener("change", atualizarPreview);
+document.getElementById("nivel_acesso").addEventListener("change", atualizarPreview);
+document.getElementById("usuario").addEventListener("input", atualizarChecklist);
+document.getElementById("senha").addEventListener("input", atualizarChecklist);
+document.getElementById("nivel_acesso").addEventListener("change", atualizarChecklist);
+document.getElementById("data_nascimento").addEventListener("change", atualizarChecklist);
+document.getElementById("data_admissao").addEventListener("change", atualizarChecklist);
+document.getElementById("cpf").addEventListener("input", atualizarChecklist);
+document.getElementById("email").addEventListener("input", atualizarChecklist);
+
+btnCargos.forEach((btn) => btn.addEventListener("click", atualizarPreview));
+
+function atualizarPreview() {
+  const nome = document.getElementById("nome").value.trim();
+  const sobrenome = document.getElementById("sobrenome").value.trim();
+  const matricula = document.getElementById("matricula").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+
+  const turnoSelect = document.getElementById("turno");
+  const regiaoSelect = document.getElementById("regiao");
+  const acessoSelect = document.getElementById("nivel_acesso");
+  const cargoAtivo = document.querySelector(".btn_cargo.on");
+
+  const nomeCompleto = [nome, sobrenome].filter(Boolean).join(" ");
+  const iniciais = [nome[0] || "", sobrenome[0] || ""].join("").toUpperCase();
+
+  document.querySelector(".visualizacao_nome").textContent = nomeCompleto || "Nome do Funcionário";
+
+  const avatarPreview = document.querySelector(".visualizacao_avatar");
+  if (!window.perfilFotoDataUrl) {
+    avatarPreview.textContent = iniciais || "??";
+  }
+
+  const cargo = cargoAtivo ? cargoAtivo.textContent.trim() : "";
+  const turnoTexto = turnoSelect.value ? turnoSelect.options[turnoSelect.selectedIndex].text.split(":")[0] : "";
+  document.querySelector(".visualizacao_turno").textContent = `${cargo} Turno ${turnoTexto}`;
+
+  document.getElementById("inf_matricula").textContent = matricula || "—";
+  document.getElementById("inf_telefone").textContent = telefone || "—";
+
+  const regiaoTexto = regiaoSelect.value ? regiaoSelect.options[regiaoSelect.selectedIndex].text : "—";
+  document.getElementById("inf_regiao").textContent = regiaoTexto;
+
+  const acessoTexto = acessoSelect.value ? acessoSelect.options[acessoSelect.selectedIndex].text.split(" ")[0] : "—";
+  document.getElementById("inf_acesso").textContent = acessoTexto;
+}
+
+function atualizarChecklist() {
+  const checks = {
+    dados_pessoais: verificarDadosPessoais(),
+    dados_profissionais: verificarDadosProfissionais(),
+    credenciais: verificarCredenciais(),
+    foto: !!window.perfilFotoDataUrl,
+  };
+
+  const itens = document.querySelectorAll(".checklist_item");
+  const ordem = ["dados_pessoais", "dados_profissionais", "credenciais", "foto"];
+
+  itens.forEach((item, index) => {
+    const icone = item.querySelector("i");
+    const completo = checks[ordem[index]];
+
+    if (completo) {
+      icone.className = "fa-solid fa-circle-check";
+      icone.style.color = "#4ade7b";
+    } else {
+      icone.className = "fa-regular fa-circle";
+      icone.style.color = "#5a7460";
+    }
+  });
+}
+
+function verificarDadosPessoais() {
+  const nome = document.getElementById("nome").value.trim();
+  const sobrenome = document.getElementById("sobrenome").value.trim();
+  const cpf = document.getElementById("cpf").value.trim();
+  const dataNasc = document.getElementById("data_nascimento").value.trim();
+  const telefone = document.getElementById("telefone").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  return (
+    nome.length > 0 &&
+    sobrenome.length > 0 &&
+    cpf.length === 14 &&
+    dataNasc.length > 0 &&
+    telefone.length === 15 &&
+    emailValido
+  );
+}
+
+function verificarDadosProfissionais() {
+  const matricula = document.getElementById("matricula").value.trim();
+  const dataAdmissao = document.getElementById("data_admissao").value.trim();
+  const turno = document.getElementById("turno").value;
+  const regiao = document.getElementById("regiao").value;
+  const cargo = document.querySelector(".btn_cargo.on");
+
+  return matricula.length > 0 && dataAdmissao.length > 0 && turno.length > 0 && regiao.length > 0 && !!cargo;
+}
+
+function verificarCredenciais() {
+  const usuario = document.getElementById("usuario").value.trim();
+  const senha = document.getElementById("senha").value.trim();
+  const nivel = document.getElementById("nivel_acesso").value;
+
+  return usuario.length > 0 && senha.length >= 6 && nivel.length > 0;
+}

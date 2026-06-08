@@ -70,13 +70,13 @@ const componentes = {
         <div class="sidebar">
             <ul>
                 <li><p>PRINCIPAL</p></li>
-                <li><a href="#"><i class="fa-solid fa-house"></i> Dashboard</a></li>
+                <li><a href="${base}index.html"><i class="fa-solid fa-house"></i> Dashboard</a></li>
                 <li><a href="#"><i class="fa-solid fa-triangle-exclamation"></i> Chamados Ativos</a></li>
                 <li><a href="#"><i class="fa-solid fa-map-location-dot"></i> Mapa ao Vivo</a></li>
                 <hr>
                 <li><p>GESTÃO</p></li>
                 <li><a href="#"><i class="fa-solid fa-truck"></i> Veiculos</a></li>
-                <li><a href="${base}telas/funcionarios.html"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
+                <li><a href="${base}telas/funcionarios.html" data-pagina-permissao="funcionarios"><i class="fa-solid fa-people-group"></i> Equipes</a></li>
                 <li><a href="#"><i class="fa-solid fa-chart-column"></i> Relatórios</a></li>
                 <hr>
                 <li><p>SISTEMA</p></li>

@@ -1,145 +1,140 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LOGIN - SOCORRO MECÂNICO</title>
 
-    <link rel="stylesheet" href="../estilos/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="../estilos/loader.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css">
+    <link rel="stylesheet" href="../estilos/login.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="../estilos/loader.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <div id="tela_loader">
-        <div class="loader">
-            <span></span>
-        </div>
+      <div class="loader">
+        <span></span>
+      </div>
     </div>
 
     <div class="lado_esquerdo">
-        <div id="logo">
-            <a href="../index.html"><img src="../imagens/logo.png" alt="Logo"></a>
+      <div id="logo">
+        <img src="../imagens/logo.png" alt="Logo" />
+      </div>
+
+      <div class="conteudo_central_esquerdo">
+        <div class="texto_principal_esquerdo">
+          <h1>
+            Controle total
+            <br />
+            do seu
+            <label>socorro</label>
+            <br />
+            mecânico
+          </h1>
+
+          <p>
+            Gerencie chamados, equipes e veículos em tempo
+            <br />
+            real. Tudo em um só lugar, com simplicidade e
+            <br />
+            eficiência.
+          </p>
         </div>
 
-        <div class="conteudo_central_esquerdo">
-            <div class="texto_principal_esquerdo">
-                <h1>
-                    Controle total
-                    <br>
-                    do seu
-                    <label>socorro</label>
-                    <br>
-                    mecânico
-                </h1>
-
-                <p>Gerencie chamados, equipes e veículos em tempo
-                    <br>
-                    real. Tudo em um só lugar, com simplicidade e
-                    <br>
-                    eficiência.
-                </p>
-            </div>
-
-            <div class="cards_de_status">
-                <div class="card">
-                    <h1>98%</h1>
-                    <p>Taxa de resolução</p>
-                </div>
-                <div class="card">
-                    <h1>24min</h1>
-                    <p>Tempo médio</p>
-                </div>
-                <div class="card">
-                    <h1>+1,2k</h1>
-                    <p>Chamados/mês</p>
-                </div>
-            </div>
+        <div class="cards_de_status">
+          <div class="card">
+            <h1>98%</h1>
+            <p>Taxa de resolução</p>
+          </div>
+          <div class="card">
+            <h1>24min</h1>
+            <p>Tempo médio</p>
+          </div>
+          <div class="card">
+            <h1>+1,2k</h1>
+            <p>Chamados/mês</p>
+          </div>
         </div>
+      </div>
 
-        <div class="inferior_lado_esquerdo">
-            <div class="status_de_atividade"></div>
-            <label>Sistema operacional · Todos os serviços ativos</label>
-        </div>
+      <div class="inferior_lado_esquerdo">
+        <div class="status_de_atividade"></div>
+        <label>Sistema operacional · Todos os serviços ativos</label>
+      </div>
     </div>
 
     <div class="lado_direito">
-        <div class="topo_lado_direito">
-            <div class="texto_principal_topo">Bem-vindo de volta</div>
-            <div class="subtitulo_topo">Entre na sua conta para continuar</div>
+      <div class="topo_lado_direito">
+        <div class="texto_principal_topo">Bem-vindo de volta</div>
+        <div class="subtitulo_topo">Entre na sua conta para continuar</div>
+      </div>
+
+      <div class="caixa_senha_incorreta">
+        <i class="fa-solid fa-circle-exclamation"></i>
+        <div class="texto_senha_incorreta">
+          <p>E-mail ou senha incorretos. Tente novamente.</p>
         </div>
+      </div>
 
-        <div class="caixa_senha_incorreta">
-            <i class="fa-solid fa-circle-exclamation"></i>
-            <div class="texto_senha_incorreta">
-                <p>E-mail ou senha incorretos. Tente novamente.</p>
-            </div>
+      <div class="caixa_de_usuario">
+        <label>Usuário</label>
+        <div class="caixa_de_colocar_usuario">
+          <i class="fa-solid fa-user"></i>
+          <input type="text" id="usuario" name="Usuário" placeholder="Seu Usuário" />
         </div>
+      </div>
 
-        <div class="caixa_de_usuario">
-            <label>Usuário</label>
-            <div class="caixa_de_colocar_usuario">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" id="usuario" name="Usuário" placeholder="Seu Usuário">
-            </div>
+      <div class="caixa_de_senha">
+        <label>Senha</label>
+        <div class="caixa_de_colocar_senha">
+          <i class="fa-solid fa-lock"></i>
+          <input type="password" id="password_user" name="E-mail" placeholder="●●●●●●●" />
+          <button class="mostrar_senha"><i class="fa-solid fa-eye"></i></button>
         </div>
+      </div>
 
-        <div class="caixa_de_senha">
-            <label>Senha</label>
-            <div class="caixa_de_colocar_senha">
-                <i class="fa-solid fa-lock"></i>
-                <input type="password" id="password_user" name="E-mail" placeholder="●●●●●●●">
-                <button class="mostrar_senha"><i class="fa-solid fa-eye"></i></button>
-            </div>
+      <div class="linha_esqueci_senha">
+        <label class="checkbox-wrapper">
+          <input type="checkbox" />
+          <div class="checkmark">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+              <path d="M20 6L9 17L4 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+          </div>
+          <span class="label">Lembrar de mim</span>
+        </label>
 
+        <div class="esqueci_senha">
+          <a href="">Esqueci a Senha</a>
         </div>
+      </div>
 
+      <button class="botao_login" id="botao_login">
+        <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        <p>Entrar no sistema</p>
+      </button>
 
-        <div class="linha_esqueci_senha">
-            <label class="checkbox-wrapper">
-                <input type="checkbox" />
-                <div class="checkmark">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-                        <path d="M20 6L9 17L4 12" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                        </path>
-                    </svg>
-                </div>
-                <span class="label">Lembrar de mim</span>
-            </label>
+      <div class="divisor">
+        <hr />
+        <p>ou continue com</p>
+        <hr />
+      </div>
 
-            <div class="esqueci_senha">
-                <a href="">Esqueci a Senha</a>
-            </div>
-            
-        </div>
+      <button class="caixa_sso_corporativo">
+        <i class="fa-solid fa-building"></i>
+        <p>Entrar com SSO corporativo</p>
+      </button>
 
-        <button class="botao_login" id="botao_login">
-            <i class="fa-solid fa-arrow-right-to-bracket"></i>
-            <p>Entrar no sistema</p>
-        </button>
+      <div class="linha_final">
+        <p>Não tem acesso?</p>
+        <a href="">Solicitar ao administrador</a>
+      </div>
+    </div>
 
-        <div class="divisor">
-            <hr>
-            <p>ou continue com</p>
-            <hr>
-        </div>
-
-        <button class="caixa_sso_corporativo">
-            <i class="fa-solid fa-building"></i>
-            <p>Entrar com SSO corporativo</p>
-        </button>
-
-        <div class="linha_final">
-            <p>Não tem acesso?</p>
-            <a href="">Solicitar ao administrador</a>
-        </div>
-
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="../scripts/loader.js"></script>
-        <script src="../scripts/login.js"></script>
-</body>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../scripts/loader.js"></script>
+    <script src="../scripts/login.js"></script>
+  </body>
 </html>
