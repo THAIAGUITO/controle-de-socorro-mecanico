@@ -6,13 +6,15 @@ class Chamado {
     this.telefone = dados.telefone;
     this.problema = dados.problema;
     this.prioridade = dados.prioridade;
-    this.descricao = undefined; // Campo para descrição detalhada do problema, não é obrigatório seu preenchimento
+    this.descricao = undefined;
     this.rua = dados.rua;
     this.numero = dados.numero;
     this.bairro = dados.bairro;
     this.cidade = dados.cidade;
     this.cep = dados.cep;
     this.equipe = dados.equipe;
+    this.status = "aberto";
+    this.dataCriacao = new Date().toISOString();
   }
 
   exibirInformacoes() {
@@ -248,3 +250,14 @@ function verificar_equipe() {
 
   return equipeSelecionada.querySelector(".nome_funcionario").textContent.trim();
 }
+
+const telefoneInput = document.getElementById("telefone");
+
+telefoneInput.addEventListener("input", function () {
+  let valor = this.value.replace(/\D/g, "");
+
+  valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
+  valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
+
+  this.value = valor;
+});

@@ -5,19 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PAGINA DE ADIÇÃO DE CHAMADOS</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <link rel="stylesheet" href="../estilos/style.css" />
@@ -35,7 +26,6 @@
     <div id="header-site"></div>
 
     <div class="pagina">
-      
       <div id="sidebar-site"></div>
 
       <main>
@@ -50,9 +40,7 @@
 
             <div class="texto_topo_conteudo">
               <div class="titulo_topo">Novo chamado</div>
-              <div class="descricao_topo">
-                Preencha os dados para registrar um novo chamado
-              </div>
+              <div class="descricao_topo">Preencha os dados para registrar um novo chamado</div>
             </div>
           </div>
 
@@ -70,10 +58,7 @@
 
             <div class="caixa_formulario">
               <div class="topo_formulario">
-                <i
-                  class="fa-solid fa-truck"
-                  style="color: #4ade7b; font-size: 13px"
-                ></i>
+                <i class="fa-solid fa-truck" style="color: #4ade7b; font-size: 13px"></i>
                 <p>Informações do Veículo</p>
               </div>
               <div class="formulario_inf_veiculos">
@@ -82,12 +67,7 @@
                     <label for="placa">Placa do veículo</label>
                     <div class="caixa_input">
                       <i class="fa-solid fa-id-card"></i>
-                      <input
-                        id="placa"
-                        class="input_inf"
-                        type="text"
-                        placeholder="Digite a placa do veículo"
-                      />
+                      <input id="placa" class="input_inf" type="text" placeholder="Digite a placa do veículo" />
                     </div>
                   </div>
 
@@ -95,12 +75,7 @@
                     <label for="modelo">Modelo / Tipo</label>
                     <div class="caixa_input">
                       <i class="fa-solid fa-car"></i>
-                      <input
-                        id="modelo"
-                        class="input_inf"
-                        type="text"
-                        placeholder="Ex: Caminhão, Carro, Moto..."
-                      />
+                      <input id="modelo" class="input_inf" type="text" placeholder="Ex: Caminhão, Carro, Moto..." />
                     </div>
                   </div>
                 </div>
@@ -110,12 +85,7 @@
                     <label for="nome_solicitante">Nome do Solicitante</label>
                     <div class="caixa_input">
                       <i class="fa-solid fa-user"></i>
-                      <input
-                        id="nome"
-                        class="input_inf"
-                        type="text"
-                        placeholder="Nome Completo"
-                      />
+                      <input id="nome" class="input_inf" type="text" placeholder="Nome Completo" />
                     </div>
                   </div>
 
@@ -123,12 +93,7 @@
                     <label for="telefone">Telefone de contato</label>
                     <div class="caixa_input">
                       <i class="fa-solid fa-phone"></i>
-                      <input
-                        id="telefone"
-                        class="input_inf"
-                        type="number"
-                        placeholder="(12) 99999-9999"
-                      />
+                      <input id="telefone" class="input_inf" type="text" placeholder="(12) 99999-9999" maxlength="14" />
                     </div>
                   </div>
                 </div>
@@ -141,10 +106,7 @@
 
             <div class="caixa_formulario">
               <div class="topo_formulario">
-                <i
-                  class="fa-solid fa-triangle-exclamation"
-                  style="color: #4ade7b; font-size: 13px"
-                ></i>
+                <i class="fa-solid fa-triangle-exclamation" style="color: #4ade7b; font-size: 13px"></i>
                 <p>Detalhes do Chamado</p>
               </div>
 
@@ -154,15 +116,11 @@
                   <div class="input_tipo_problema">
                     <i class="fa-solid fa-wrench"></i>
                     <select id="problema">
-                      <option value disabled selected>
-                        Selecione o problema
-                      </option>
+                      <option value disabled selected>Selecione o problema</option>
                       <option value="pneu_furado">Pneu Furado</option>
                       <option value="bateria">Problema de bateria</option>
                       <option value="superaquecimento">Superaquecimento</option>
-                      <option value="falta_combustivel">
-                        Falta de combustível
-                      </option>
+                      <option value="falta_combustivel">Falta de combustível</option>
                       <option value="acidente">Acidente</option>
                       <option value="outro">Outro</option>
                     </select>
@@ -172,15 +130,9 @@
                 <div class="campo">
                   <label>Prioridade</label>
                   <div class="botoes_prioridade">
-                    <button id="btn_urgente" class="botao_prioridade">
-                      🔴 URGENTE
-                    </button>
-                    <button id="btn_normal" class="botao_prioridade">
-                      🟢 NORMAL
-                    </button>
-                    <button id="btn_aguardando" class="botao_prioridade">
-                      🟡 AGUARDANDO
-                    </button>
+                    <button id="btn_urgente" class="botao_prioridade">🔴 URGENTE</button>
+                    <button id="btn_normal" class="botao_prioridade">🟢 NORMAL</button>
+                    <button id="btn_aguardando" class="botao_prioridade">🟡 AGUARDANDO</button>
                   </div>
                 </div>
               </div>
@@ -189,10 +141,7 @@
                 <div class="campo">
                   <label for="descricao">Descrição do problema</label>
                   <div class="caixa_descricao">
-                    <textarea
-                      id="descricao"
-                      placeholder="Descreva oque está acontecendo com o veículo..."
-                    ></textarea>
+                    <textarea id="descricao" placeholder="Descreva oque está acontecendo com o veículo..."></textarea>
                   </div>
                 </div>
               </div>
@@ -204,10 +153,7 @@
 
             <div class="caixa_formulario">
               <div class="topo_formulario">
-                <i
-                  class="fa-solid fa-map-location-dot"
-                  style="color: #4ade7b; font-size: 13px"
-                ></i>
+                <i class="fa-solid fa-map-location-dot" style="color: #4ade7b; font-size: 13px"></i>
                 <p>Localização</p>
               </div>
 
@@ -216,12 +162,7 @@
                   <label>Endereço</label>
                   <div class="caixa_input">
                     <i class="fa-solid fa-road"></i>
-                    <input
-                      type="text"
-                      class="input_inf"
-                      id="rua"
-                      placeholder="Rua, Avenida, Rodovia..."
-                    />
+                    <input type="text" class="input_inf" id="rua" placeholder="Rua, Avenida, Rodovia..." />
                   </div>
                 </div>
 
@@ -229,12 +170,7 @@
                   <label>NÚmero / KM</label>
                   <div class="caixa_input">
                     <i class="fa-solid fa-hashtag"></i>
-                    <input
-                      type="text"
-                      class="input_inf"
-                      id="numero_endereco"
-                      placeholder="Ex: 1000 ou KM 120"
-                    />
+                    <input type="text" class="input_inf" id="numero_endereco" placeholder="Ex: 1000 ou KM 120" />
                   </div>
                 </div>
               </div>
@@ -243,36 +179,21 @@
                 <div class="campo">
                   <label>Bairro</label>
                   <div class="caixa_input">
-                    <input
-                      type="text"
-                      class="input_inf"
-                      placeholder="Bairro"
-                      id="bairro"
-                    />
+                    <input type="text" class="input_inf" placeholder="Bairro" id="bairro" />
                   </div>
                 </div>
 
                 <div class="campo">
                   <label>Cidade</label>
                   <div class="caixa_input">
-                    <input
-                      type="text"
-                      class="input_inf"
-                      placeholder="Cidade"
-                      id="cidade"
-                    />
+                    <input type="text" class="input_inf" placeholder="Cidade" id="cidade" />
                   </div>
                 </div>
 
                 <div class="campo">
                   <label>CEP</label>
                   <div class="caixa_input">
-                    <input
-                      type="text"
-                      class="input_inf"
-                      placeholder="00000-000"
-                      id="cep"
-                    />
+                    <input type="text" class="input_inf" placeholder="00000-000" id="cep" />
                   </div>
                 </div>
               </div>
@@ -296,10 +217,7 @@
 
             <div class="card_direita">
               <div class="topo_card_direita">
-                <i
-                  class="fa-solid fa-clipboard-list"
-                  style="color: #4ade7b; font-size: 13px"
-                ></i>
+                <i class="fa-solid fa-clipboard-list" style="color: #4ade7b; font-size: 13px"></i>
                 <p>Resumo do Chamado</p>
               </div>
 
@@ -340,10 +258,7 @@
 
             <div class="card_direita">
               <div class="topo_card_direita">
-                <i
-                  class="fa-solid fa-users"
-                  style="color: #4ade7b; font-size: 13px"
-                ></i>
+                <i class="fa-solid fa-users" style="color: #4ade7b; font-size: 13px"></i>
                 <p>Atribuir Equipe</p>
               </div>
               <div class="equipe_item">
@@ -358,9 +273,7 @@
                 <div class="avatar" style="background: #1a4a7a">FL</div>
                 <div>
                   <div class="nome_funcionario">Flúria Costa</div>
-                  <div class="status_funcionario" style="color: #f5c842">
-                    Em deslocamento
-                  </div>
+                  <div class="status_funcionario" style="color: #f5c842">Em deslocamento</div>
                 </div>
               </div>
 

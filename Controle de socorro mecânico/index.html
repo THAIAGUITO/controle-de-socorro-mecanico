@@ -209,59 +209,11 @@
               <div class="topo_card_equipe">
                 <h1>Status da Equipe</h1>
                 <div class="caixa_estilo_ativo">
-                  <p>6 Ativos</p>
+                  <p id="contador_ativos">0 Ativos</p>
                 </div>
               </div>
 
-              <div class="inferior_card_equipe">
-                <div class="card_funcinario">
-                  <div class="funcionario">
-                    <div class="img_funcionario" style="background: #1a7a4a">
-                      <p>JO</p>
-                    </div>
-                    <div class="informações_usuario">
-                      <h1>João</h1>
-                      <p style="color: #f25c54">Em socorro</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card_funcinario">
-                  <div class="funcionario">
-                    <div class="img_funcionario" style="background: #1a4a7a">
-                      <p>FL</p>
-                    </div>
-                    <div class="informações_usuario">
-                      <h1>Flúria</h1>
-                      <p style="color: #f5c842">Deslocamento</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card_funcinario">
-                  <div class="funcionario">
-                    <div class="img_funcionario" style="background: #7a1a4a">
-                      <p>PE</p>
-                    </div>
-                    <div class="informações_usuario">
-                      <h1>Pedro</h1>
-                      <p style="color: #4ade7b">Disponível</p>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="card_funcinario">
-                  <div class="funcionario">
-                    <div class="img_funcionario" style="background: #4a7a1a">
-                      <p>MA</p>
-                    </div>
-                    <div class="informações_usuario">
-                      <h1>Maria</h1>
-                      <p style="color: #4ade7b">Disponível</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="inferior_card_equipe" id="lista_equipe"></div>
             </div>
           </div>
         </div>
@@ -272,6 +224,7 @@
     <script src="scripts/componentes.js"></script>
     <script src="scripts/mapa.js"></script>
     <script src="scripts/loader.js"></script>
+    <script src="scripts/index.js"></script>
 
     <script>
       protegerPagina(window.location.pathname);

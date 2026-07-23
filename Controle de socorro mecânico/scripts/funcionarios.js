@@ -1,41 +1,16 @@
-const funcionarios = [
-  {
-    nome: "Camila Rocha",
-    email: "camila.rocha@autoresgate.com",
-    matricula: "AR-00245",
-    cargo: "administrativo",
-    turno: "manha",
-    regiao: "norte",
-    status: "inativo",
-  },
-  {
-    nome: "Paulo Mendes",
-    email: "paulo.mendes@autoresgate.com",
-    matricula: "AR-00178",
-    cargo: "mecanico",
-    turno: "tarde",
-    regiao: "sul",
-    status: "inativo",
-  },
-  {
-    nome: "Renata Cardoso",
-    email: "renata.cardoso@autoresgate.com",
-    matricula: "AR-00156",
-    cargo: "atendente",
-    turno: "noite",
-    regiao: "oeste",
-    status: "inativo",
-  },
-  {
-    nome: "Gustavo Pereira",
-    email: "gustavo.pereira@autoresgate.com",
-    matricula: "AR-00099",
-    cargo: "administrativo",
-    turno: "manha",
-    regiao: "leste",
-    status: "inativo",
-  },
-];
+const funcionarios = JSON.parse(localStorage.getItem("funcionarios")) || [];
+
+function atualizarCards() {
+  const total = funcionarios.length;
+  const ativos = funcionarios.filter((f) => f.status === "ativo").length;
+  const aguardando = funcionarios.filter((f) => f.status === "aguardando_cadastro").length;
+  const inativos = funcionarios.filter((f) => f.status === "inativo").length;
+
+  document.querySelectorAll(".numero_status")[0].textContent = total;
+  document.querySelectorAll(".numero_status")[1].textContent = ativos;
+  document.querySelectorAll(".numero_status")[2].textContent = aguardando;
+  document.querySelectorAll(".numero_status")[3].textContent = inativos;
+}
 
 const avatarColors = [
   ["#1e4a2e", "#4ade7b"],
@@ -70,54 +45,100 @@ function badgeStatus(status) {
 }
 
 function badgeTurno(turno) {
-  const icons = { manha: "fa-sun", tarde: "fa-cloud-sun", noite: "fa-moon" };
-  const labels = { manha: "Manhã", tarde: "Tarde", noite: "Noite" };
+  const icons = {
+    manha: "fa-sun",
+    manhã: "fa-sun",
+    tarde: "fa-cloud-sun",
+    noite: "fa-moon",
+    integral: "fa-briefcase",
+  };
+  const labels = {
+    manha: "Manhã",
+    manhã: "Manhã",
+    tarde: "Tarde",
+    noite: "Noite",
+    integral: "Integral",
+  };
+
   return `<span class="badge-turno"><i class="fa-solid ${icons[turno] || "fa-clock"}"></i>${labels[turno] || turno}</span>`;
 }
 
 function capitalizar(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
+  if (!str) return "—";
+  return str
+    .replace(/_/g, " ")
+    .split(" ")
+    .map((palavra) => palavra.charAt(0).toUpperCase() + palavra.slice(1))
+    .join(" ");
 }
 
 function renderTabela(lista) {
   const tbody = document.getElementById("tbody_funcionarios");
   const empty = document.getElementById("empty_state");
+
   if (lista.length === 0) {
     tbody.innerHTML = "";
     empty.classList.add("visible");
     return;
   }
+
   empty.classList.remove("visible");
   tbody.innerHTML = lista
     .map(
       (f, i) => `
-          <div class="linha_funcionario"
-               data-nome="${f.nome.toLowerCase()}"
-               data-cargo="${f.cargo}"
-               data-regiao="${f.regiao}"
-               data-status="${f.status}"
-               data-turno="${f.turno}">
-            <div class="cel_funcionario">
-              ${getAvatar(f.nome, i)}
-              <div>
-                <div class="nome_func">${f.nome}</div>
-                <div class="email_func">${f.email}</div>
-              </div>
-            </div>
-            <div class="cel_texto">${f.matricula}</div>
-            <div class="cel_cargo">${capitalizar(f.cargo)}</div>
-            <div>${badgeTurno(f.turno)}</div>
-            <div class="cel_texto">${capitalizar(f.regiao)}</div>
-            <div>${badgeStatus(f.status)}</div>
-            <div class="acoes">
-              <button class="btn_acao ver"    title="Ver detalhes"><i class="fa-solid fa-eye"></i></button>
-              <button class="btn_acao editar" title="Editar"><i class="fa-solid fa-pen"></i></button>
-              <button class="btn_acao del"    title="Remover"><i class="fa-solid fa-trash"></i></button>
+        <div class="linha_funcionario"
+             data-matricula="${f.matricula}"
+             data-nome="${(f.nome + " " + (f.sobrenome || "")).toLowerCase()}"
+             data-cargo="${f.cargo}"
+             data-regiao="${f.regiao}"
+             data-status="${f.status}"
+             data-turno="${f.turno}">
+          <div class="cel_funcionario">
+            ${getAvatar(f.nome + " " + (f.sobrenome || ""), i)}
+            <div>
+              <div class="nome_func">${f.nome} ${f.sobrenome || ""}</div>
+              <div class="email_func">${f.email || "—"}</div>
             </div>
           </div>
-        `,
+          <div class="cel_texto">${f.matricula}</div>
+          <div class="cel_cargo">${capitalizar(f.cargo)}</div>
+          <div>${badgeTurno(f.turno)}</div>
+          <div class="cel_texto">${capitalizar(f.regiao)}</div>
+          <div>${badgeStatus(f.status)}</div>
+          <div class="acoes">
+            <button class="btn_acao ver"    title="Ver detalhes"><i class="fa-solid fa-eye"></i></button>
+            <button class="btn_acao editar" title="Editar"><i class="fa-solid fa-pen"></i></button>
+            <button class="btn_acao del"    title="Remover" data-matricula="${f.matricula}">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </div>
+        </div>
+      `,
     )
     .join("");
+
+  document.querySelectorAll(".btn_acao.del").forEach((btn) => {
+    btn.addEventListener("click", function () {
+      const matricula = this.getAttribute("data-matricula");
+      const linha = this.closest(".linha_funcionario");
+      const nome = linha.querySelector(".nome_func").textContent;
+
+      const confirmado = confirm(
+        `Deseja realmente excluir o funcionário "${nome}"?\n\nEsta ação não pode ser desfeita.`,
+      );
+
+      if (confirmado) {
+        let lista = JSON.parse(localStorage.getItem("funcionarios")) || [];
+        lista = lista.filter((f) => f.matricula !== matricula);
+        localStorage.setItem("funcionarios", JSON.stringify(lista));
+
+        funcionarios.length = 0;
+        lista.forEach((f) => funcionarios.push(f));
+        filtrar();
+        atualizarCards();
+      }
+    });
+  });
 }
 
 function filtrar() {
@@ -129,7 +150,9 @@ function filtrar() {
 
   const lista = funcionarios.filter(
     (f) =>
-      (!busca || f.nome.toLowerCase().includes(busca) || f.matricula.toLowerCase().includes(busca)) &&
+      (!busca ||
+        (f.nome + " " + (f.sobrenome || "")).toLowerCase().includes(busca) ||
+        f.matricula.toLowerCase().includes(busca)) &&
       (!cargo || f.cargo === cargo) &&
       (!regiao || f.regiao === regiao) &&
       (!status || f.status === status) &&
@@ -138,8 +161,11 @@ function filtrar() {
   renderTabela(lista);
 }
 
-["buscar_funcionario", "cargo_funcionario", "regiao_funcionario", "status_funcionario", "turno_funcionario"].forEach(
-  (id) => document.getElementById(id).addEventListener("input", filtrar),
-);
+document.getElementById("buscar_funcionario").addEventListener("input", filtrar);
+document.getElementById("cargo_funcionario").addEventListener("change", filtrar);
+document.getElementById("regiao_funcionario").addEventListener("change", filtrar);
+document.getElementById("status_funcionario").addEventListener("change", filtrar);
+document.getElementById("turno_funcionario").addEventListener("change", filtrar);
 
 renderTabela(funcionarios);
+atualizarCards();

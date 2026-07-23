@@ -15,6 +15,7 @@ class Funcionario {
     this.usuario = dados.usuario;
     this.senha = dados.senha;
     this.nivelAcesso = dados.nivelAcesso;
+    this.status = dados.status || "ativo";
   }
 
   exibirInformacoes() {
@@ -91,6 +92,7 @@ cadastrar.addEventListener("click", () => {
     usuario: campos.usuario,
     senha: campos.senha,
     nivelAcesso: campos.nivelAcesso,
+    status: "ativo",
   });
 
   const funcionarios = JSON.parse(localStorage.getItem("funcionarios")) || [];
@@ -118,7 +120,7 @@ telefoneInput.addEventListener("input", function () {
   let valor = this.value.replace(/\D/g, "");
 
   valor = valor.replace(/^(\d{2})(\d)/g, "($1) $2");
-  valor = valor.replace(/(\d{5})(\d)/, "$1-$2");
+  valor = valor.replace(/(\d{4})(\d)/, "$1-$2");
 
   this.value = valor;
 });
